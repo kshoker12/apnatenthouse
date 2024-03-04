@@ -4,8 +4,8 @@
         "titleText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.",
         "features": [
             {"name": "tents", "title": "Tents", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 4},
-            {"name": "chairs", "title": "Chairs", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 6},
-            {"name": "tables", "title": "Tables", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 8},
+            {"name": "chairs", "title": "Chairs", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 2},
+            {"name": "tables", "title": "Tables", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 4},
             {"name": "floors", "title": "Floors", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 5},
             {"name": "bars", "title": "Bars", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 4},
             {"name": "stages", "title": "Stages", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 4}
@@ -19,5 +19,22 @@
         "why2": [ 
             "Sdfdfsd", "Dsfdss dfd", "sdfddfs dsfd", " fdssadfd dfdgs"
         ]
-    }
+    },
+    "products": [
+        {"name": "Chairs", "icon": "fas fa-chair", "items":[
+            {"image": "chair2.jpg", "name": "Plain Chair", "cost": 2.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
+            {"image": "chair3.jpg", "name": "Garden Padded Chair", "cost": 4.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
+        ]},
+        {"name": "Tables", "icon": "", "items":[
+            {"image": "table1.png", "name": "Cocktail Table", "cost": 10.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
+            {"image": "table2.png", "name": "Round Table", "cost": 10.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
+            {"image": "table3.png", "name": "Rectangle Table", "cost": 8.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
+            {"image": "table4.png", "name": "Buffet Table", "cost": 10.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
+        ]},
+        {"name": "Floors", "icon": "", "items":[
+            {"image": "floor1.jpg", "name": "Wooden Dance Floor", "cost": 10.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
+            {"image": "floor2.jpg", "name": "Click-in Dance Floor", "cost": 10.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
+            {"image": "floor3.jpg", "name": "Turf Flooring", "cost": 0.20, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
+        ]}
+    ]
 }
