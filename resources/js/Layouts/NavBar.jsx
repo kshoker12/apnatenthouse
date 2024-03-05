@@ -85,13 +85,8 @@ export default function NavBar({children }) {
                         </NavLink> 
                     </li>
                     <li>
-                        <NavLink className = "navlink" href={route('stages')} active={route().current('stages')} >
-                            Stages
-                        </NavLink> 
-                    </li>
-                    <li>
-                        <NavLink className = "navlink" href={route('bars')} active={route().current('bars')} >
-                            Bars
+                        <NavLink className = "navlink" href={route('miscellaneous')} active={route().current('miscellaneous')} >
+                            Miscellaneous
                         </NavLink> 
                     </li>
                     <li>

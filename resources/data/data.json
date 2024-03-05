@@ -35,6 +35,10 @@
             {"image": "floor1.jpg", "name": "Wooden Dance Floor", "cost": 10.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
             {"image": "floor2.jpg", "name": "Click-in Dance Floor", "cost": 10.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
             {"image": "floor3.jpg", "name": "Turf Flooring", "cost": 0.20, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
+        ]},
+        {"name": "Miscellaneous", "icon": "", "items":[
+            {"image": "floor1.jpg", "name": "Stage", "cost": 10.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
+            {"image": "bars.png", "name": "LED Bar", "cost": 250.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
         ]}
     ]
 }

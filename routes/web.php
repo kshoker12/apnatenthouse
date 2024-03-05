@@ -80,10 +80,6 @@ Route::get('/tents', function () {
     return Inertia::render('Tents');
 })->name('tents');
 
-Route::get('/stages', function () {
-    return Inertia::render('Stages');
-})->name('stages');
-
 Route::get('/chairs', function () {
     return Inertia::render('Chairs');
 })->name('chairs');
@@ -92,9 +88,9 @@ Route::get('/floors', function () {
     return Inertia::render('Floors');
 })->name('floors');
 
-Route::get('/bars', function () {
-    return Inertia::render('Bars');
-})->name('bars');
+Route::get('/miscellaneous', function () {
+    return Inertia::render('Miscellaneous');
+})->name('miscellaneous');
 
 Route::get('/tables', function () {
     return Inertia::render('Tables');
@@ -111,6 +107,10 @@ Route::get('/gallery', function () {
 Route::get('/secret', function () {
     return Inertia::render('React-Landing-Page-Template/src/App');
 })->name('secret');
+
+Route::get('/booking', function () {
+    return Inertia::render('Booking');
+})->name('booking');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
