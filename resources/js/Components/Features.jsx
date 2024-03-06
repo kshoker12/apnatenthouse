@@ -17,10 +17,8 @@ export default function Features({ props }) {
                 return tablesImg;
             case "floors":
                 return floorsImg;
-            case "bars":
+            case "miscellaneous":
                 return barsImg;
-            case "stages":
-                return stagesImg;
         }
     }
 

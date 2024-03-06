@@ -16,13 +16,13 @@ export default function Header({ props }) {
                         <p>{props.titleText ? props.titleText : "Loading"}</p>
                         <div className="">
                             <a
-                            href="#features"
+                            href="#about"
                             className="btn btn-custom btn-lg page-scroll"
                             >
                             Learn More
                             </a>{" "}
                             <a
-                                href="#features"
+                                href={route("booking")}
                                 className="btn btn-custom btn-lg page-scroll"
                                 >
                                 Request Booking
