@@ -24,13 +24,13 @@ export default function Product({props}) {
                     </div>
                 </div>
             </header>
-            <div className="tw-bg-blue-50 tw-h-fit tw-grid sm:tw-grid-cols-2 md:tw-grid-cols-3 tw-grid-cols-1">
+            <div className="tw-bg-blue-50 tw-h-fit tw-grid md:tw-grid-cols-2 lg:tw-grid-cols-3 tw-grid-cols-1">
                 {props.items.map((item, index)=>{
                     return (
                         <div className="tw-bg-white tw-p-10 tw-m-10 tw-flex tw-items-center tw-justify-center" data-aos = "flip-left" data-aos-once = {true}>
                             <div className="">
                                 <h3>{item.name}</h3>
-                                <div className="sm:tw-flex tw-justify-between tw-items-start tw-space-x-4">
+                                <div className="2xl:tw-flex tw-justify-between tw-items-start tw-space-x-4">
                                     <img src={"/" + item.image} alt="" className="tw-w-96 tw-h-auto  tw-p-1"/>
                                     <p>
                                         {item.text}
