@@ -40,6 +40,7 @@ Route::get('/home', function () {
     
     //     $search = new GoogleSearchResults('dfae333e4f42d27ef6b36a190040cd2dc8426f5b8dace99657db79d0cb15cda0');
     //     $result = $search->get_json($query);
+
     //     $reviews = array_merge($reviews, $result->reviews);
     //     $pagination = property_exists( $result,'serpapi_pagination') ? $result->serpapi_pagination: NULL;
     // }
@@ -88,9 +89,9 @@ Route::get('/floors', function () {
     return Inertia::render('Floors');
 })->name('floors');
 
-Route::get('/addons', function () {
+Route::get('/miscellaneous', function () {
     return Inertia::render('Miscellaneous');
-})->name('addons');
+})->name('miscellaneous');
 
 Route::get('/tables', function () {
     return Inertia::render('Tables');
