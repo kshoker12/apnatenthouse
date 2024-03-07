@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string("link");
             $table->integer("rating");
             $table->string('review_id');
-            $table->string('snippet');
+            $table->longText('snippet');
             $table->string('username');
             $table->string('userlink');
             $table->integer('userreviews');
