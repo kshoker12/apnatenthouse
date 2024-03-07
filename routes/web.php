@@ -88,9 +88,9 @@ Route::get('/floors', function () {
     return Inertia::render('Floors');
 })->name('floors');
 
-Route::get('/miscellaneous', function () {
+Route::get('/addons', function () {
     return Inertia::render('Miscellaneous');
-})->name('miscellaneous');
+})->name('addons');
 
 Route::get('/tables', function () {
     return Inertia::render('Tables');
