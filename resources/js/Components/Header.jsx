@@ -9,7 +9,7 @@ export default function Header({ props }) {
                 <div className="container">
                     <div className="row" data-aos = "fade-up" data-aos-once = {true}>
                     <div className="col-md-8 col-md-offset-2 intro-text" >
-                        <h1>
+                        <h1 className = "">
                         {props.title ? props.title : "Loading"}
                         <span></span>
                         </h1>

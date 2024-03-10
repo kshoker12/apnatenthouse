@@ -85,8 +85,8 @@ export default function NavBar({children }) {
                         </NavLink> 
                     </li>
                     <li>
-                        <NavLink className = "navlink" href={route('miscellaneous')} active={route().current('miscellaneous')} >
-                            Miscellaneous
+                        <NavLink className = "navlink" href={route('addons')} active={route().current('addons')} >
+                            Add-ons
                         </NavLink> 
                     </li>
                     <li>
