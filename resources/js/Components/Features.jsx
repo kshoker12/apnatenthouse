@@ -35,7 +35,7 @@ export default function Features({ props }) {
                             <a href = {feature.name} className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200">
                                 <div key={`${feature.title}-${i}`} className="col-xs-6 col-md-3">
                                     {" "}
-                                    <h3>{feature.title}</h3>
+                                    <h3>{feature.title}</h3> 
                                     <img src={findImage(feature.name)} alt="" />
                                     <h5>{feature.products} Products</h5>
                                     <p>{feature.text}</p>

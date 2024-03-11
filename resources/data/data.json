@@ -13,10 +13,10 @@
     "aboutus": {
         "main": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, alias eaque delectus quam voluptate facere veritatis aperiam quae sequi qui tenetur ipsam doloremque, maxime nostrum quos praesentium quas suscipit! Natus voluptatem vero laboriosam sapiente, earum, dolorem eveniet corrupti cum quod facilis harum? Ipsum in qui recusandae porro dicta, tempore rerum.",
         "why": [
-            "frbnfmdefg bfdbvf dd", "ffrbfsd sdfdgbvsd sdf", "Ddvbfvdsd sdfdgs", "Dfvfbdvs asdsfd", "svdbfvs dsf"
+            "Family-Owned and Customer-Centric", "Unmatched Quality and Reliability", "Competitive Pricing", "Experience and Expertise"
         ],
         "why2": [ 
-            "Sdfdfsd", "Dsfdss dfd", "sdfddfs dsfd", " fdssadfd dfdgs"
+            "Attention to Detail", "Excellent Customer Service", "Wide Range of Options"
         ]
     },
     "products": [
@@ -44,7 +44,7 @@
         {"name": "Tents", "icon": "", "items":[
             {"image": "popuptent.jpg", "name": "Pop-up Tent", "cost": 100.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
             {"image": "marqueetent.jpg", "name": "Marquee Tent", "cost": 250.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "popuptent.jpg", "name": "Frame Tent", "cost": 250.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
+            {"image": "frametent.jpg", "name": "Frame Tent", "cost": 250.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
         ]}
     ]
 }

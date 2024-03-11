@@ -17,13 +17,13 @@ export default function Header({ props }) {
                         <div className="">
                             <a
                             href="#about"
-                            className="btn btn-custom btn-lg page-scroll"
+                            className="btn btn-custom btn-lg"
                             >
                             Learn More
                             </a>{" "}
                             <a
                                 href={route("booking")}
-                                className="btn btn-custom btn-lg page-scroll"
+                                className="btn btn-custom btn-lg"
                                 >
                                 Request Booking
                             </a>{" "}
