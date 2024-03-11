@@ -42,7 +42,7 @@
             {"image": "bars.png", "name": "LED Bar", "cost": 250.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
         ]},
         {"name": "Tents", "icon": "", "items":[
-            {"image": "popuptent.jpg", "name": "Pop-up Tent", "cost": 100.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
+            {"image": "tent1.jpg", "name": "Pop-up Tent", "cost": 100.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
             {"image": "marqueetent.jpg", "name": "Marquee Tent", "cost": 250.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
             {"image": "tent4.jpg", "name": "Frame Tent", "cost": 250.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
         ]}
