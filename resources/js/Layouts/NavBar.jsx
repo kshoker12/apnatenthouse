@@ -22,7 +22,7 @@ export default function NavBar({children }) {
 
 
     return (
-        <div className="">
+        <div className="tw-h-screen">
             <nav id="menu" className="navbar navbar-default navbar-fixed-top">
               <div className="container">
                 <div className="navbar-header">

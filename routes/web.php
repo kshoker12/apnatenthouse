@@ -113,6 +113,14 @@ Route::get('/booking', function () {
     return Inertia::render('Booking');
 })->name('booking');
 
+Route::get('/booking-form', function () {
+    return Inertia::render('BookingForm');
+})->name('bookingForm');
+
+Route::post('/booking-submit', function () {
+    return Inertia::render('home');
+})->name('bookingSubmit');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

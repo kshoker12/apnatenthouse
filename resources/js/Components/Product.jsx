@@ -13,7 +13,7 @@ export default function Product({props}) {
                                         <i class={"tw-ml-4 " + props.icon}/>
                                     </h1>
                                     <a
-                                        href="#features"
+                                        href={route("booking")}
                                         className="btn btn-custom btn-lg page-scroll"
                                         >
                                         Request Booking
