@@ -190,11 +190,11 @@ export default function Booking({props}) {
                 </div>
             </header>
             <div className="tw-bg-blue-50 lg:tw-h-fit md:tw-px-20 sm:tw-px-10 tw-px-2 tw-pt-6 tw-pb-10 ">
-                <div className=" tw-flex tw-justify-center sm:tw-space-x-8 tw-space-x-1 tw-items-start">
+                <div className=" tw-flex tw-justify-center sm:tw-space-x-8 tw-space-x-2 tw-items-start">
                     {products.map((product, index)=>{
                         return (
                             <button 
-                                className={"lg:tw-px-10 lg:tw-py-6 md:tw-px-8 md:tw-py-4 tw-px-8 tw-py-2 sm:tw-px-6 sm:tw-py-3 sm:tw-rounded-full tw-rounded-lg lg:tw-text-3xl md:tw-text-2xl sm:tw-text-xl tw-ease-in-out tw-duration-700 tw-text-center " + (active === index ? 'tw-bg-blue-700 tw-text-white':'tw-bg-blue-100 hover:tw-bg-blue-600 hover:tw-text-white')}
+                                className={"lg:tw-px-10 lg:tw-py-6 md:tw-px-8 md:tw-py-4 tw-px-5 tw-py-2 sm:tw-px-6 sm:tw-py-3 sm:tw-rounded-full tw-rounded-lg lg:tw-text-3xl md:tw-text-2xl sm:tw-text-xl tw-ease-in-out tw-duration-700 tw-text-center " + (active === index ? 'tw-bg-blue-700 tw-text-white':'tw-bg-blue-100 hover:tw-bg-blue-600 hover:tw-text-white')}
                                 onClick={(e)=>{
                                     e.stopPropagation();
                                     setActive(index);
