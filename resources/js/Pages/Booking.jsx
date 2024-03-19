@@ -10,8 +10,9 @@ import addOnImg from "../Components/bars.png";
 import tablesImg from "../Components/tables.png";
 import PrimaryButton from "@/Components/PrimaryButton";   
 
-import { styled, Table, TableBody, TableHead, TableRow, TableContainer, Paper } from '@mui/material';
+import { styled, Table, TableBody, TableHead, TableRow, TableContainer, Paper, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, useMediaQuery } from '@mui/material';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
+import { useTheme } from '@mui/material/styles';
 
 
 
@@ -19,6 +20,7 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 export default function Booking({props}) {
     const [active, setActive] = useState(0)
     const products = [JsonData.products[4],JsonData.products[0], JsonData.products[1], JsonData.products[2], JsonData.products[3]]
+    const [openIndex, setOpenIndex] = useState(-1);
 
     function findImage(category) {
         switch (category) {
@@ -36,7 +38,50 @@ export default function Booking({props}) {
                 break;
         }
     }
+
     
+    function ResponsiveDialog() {
+        
+        const theme = useTheme();
+        const fullScreen = useMediaQuery(theme.breakpoints.down(''));
+
+        const activeProduct = openIndex > -1 ? products[active].items[openIndex]: 0;
+
+        const handleClose = () => {
+            setOpenIndex(-1);
+        };
+
+        return (
+            <Dialog
+                fullScreen={fullScreen}
+                open={openIndex > -1}
+                onClose={handleClose}
+                aria-labelledby="responsive-dialog-title"
+            >
+                <DialogTitle id="responsive-dialog-title">
+                    <div className="tw-text-black">
+                        {activeProduct.name}    
+                    </div>
+                
+                </DialogTitle>
+                <DialogContent>
+                    <img src={activeProduct.image} className="tw-w-full tw-h-auto"/>
+                <DialogContentText>
+                    Let Google help apps determine location. This means sending anonymous
+                    location data to Google, even when no apps are running.
+                </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                <Button autoFocus onClick={handleClose} size="large">
+                    Cancel
+                </Button>
+                <Button onClick={handleClose} autoFocus size="large">
+                    Confirm
+                </Button>
+                </DialogActions>
+            </Dialog>
+        );
+    }
 
 
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -100,10 +145,10 @@ export default function Booking({props}) {
                             {row.calories}
                             <div className="tw-flex-1 tw-space-y-2 2xl:tw-ml-0 xl:tw-ml-1">
                                 <div className="tw-h-4">
-                                    <button><i className="fas fa-caret-up 2xl:tw-text-5xl md:tw-text-4xl tw-ease-in-out tw-duration-200 hover:tw-text-blue-700 "/></button>   
+                                    <button><i className="fas fa-caret-up 2xl:tw-text-5xl tw-text-4xl tw-ease-in-out tw-duration-200 hover:tw-text-blue-700 "/></button>   
                                 </div>
                                 <div className="">
-                                    <button><i className="fas fa-caret-down 2xl:tw-text-5xl md:tw-text-4xl tw-ease-in-out tw-duration-200 hover:tw-text-blue-700"/></button>   
+                                    <button><i className="fas fa-caret-down 2xl:tw-text-5xl tw-text-4xl tw-ease-in-out tw-duration-200 hover:tw-text-blue-700"/></button>   
                                 </div>
                             </div>
                         </div>
@@ -121,7 +166,7 @@ export default function Booking({props}) {
     );
     }
 
-    function ProductCard({product}) {
+    function ProductCard({product, index}) {
         return (
             <div className="product-card tw-bg-white tw-shadow-lg">
                 <img src={product.image} alt="" className="product-img"/>
@@ -134,6 +179,9 @@ export default function Booking({props}) {
                     </p>
                     <button 
                         className="tw-text-2xl tw-text-blue-500 tw-ease-in-out tw-duration-200 hover:tw-bg-blue-500 hover:tw-text-white tw-px-4 tw-py-1 tw-rounded-lg"
+                        onClick={(e)=>{
+                            setOpenIndex(index)
+                        }}
                     >
                         Add Item
                     </button>
@@ -143,7 +191,7 @@ export default function Booking({props}) {
         )
     }
 
-    function ChairCard({product}) {
+    function ChairCard({product, index}) {
         return (
             <div className="product-card tw-bg-white tw-shadow-lg">
                 <div className="product-img-2 tw-flex tw-justify-center tw-items-center">
@@ -159,6 +207,9 @@ export default function Booking({props}) {
                     </p>
                     <button 
                         className="tw-text-2xl tw-text-blue-500 tw-ease-in-out tw-duration-200 hover:tw-bg-blue-500 hover:tw-text-white tw-px-4 tw-py-1 tw-rounded-lg"
+                        onClick={()=>{
+                            setOpenIndex(index)
+                        }}
                     >
                         Add Item
                     </button>
@@ -166,8 +217,6 @@ export default function Booking({props}) {
             </div>
         )
     }
-
-
 
     return (
         <NavBar>
@@ -189,18 +238,20 @@ export default function Booking({props}) {
                     </div>
                 </div>
             </header>
+            <ResponsiveDialog/>
             <div className="tw-bg-blue-50 lg:tw-h-fit md:tw-px-20 sm:tw-px-10 tw-px-2 tw-pt-6 tw-pb-10 ">
+                
                 <div className=" tw-flex tw-justify-center sm:tw-space-x-8 tw-space-x-2 tw-items-start">
                     {products.map((product, index)=>{
                         return (
                             <button 
-                                className={"lg:tw-px-10 lg:tw-py-6 md:tw-px-8 md:tw-py-4 tw-px-5 tw-py-2 sm:tw-px-6 sm:tw-py-3 sm:tw-rounded-full tw-rounded-lg lg:tw-text-3xl md:tw-text-2xl sm:tw-text-xl tw-ease-in-out tw-duration-700 tw-text-center " + (active === index ? 'tw-bg-blue-700 tw-text-white':'tw-bg-blue-100 hover:tw-bg-blue-600 hover:tw-text-white')}
+                                className={"lg:tw-px-10 lg:tw-py-6 md:tw-px-8 md:tw-py-4 tw-px-5 tw-py-2 sm:tw-px-6 sm:tw-py-3 tw-rounded-full lg:tw-text-3xl md:tw-text-2xl sm:tw-text-xl tw-text-base tw-ease-in-out tw-duration-700 tw-text-center " + (active === index ? 'tw-bg-blue-700 tw-text-white':'tw-bg-blue-100 hover:tw-bg-blue-600 hover:tw-text-white')}
                                 onClick={(e)=>{
                                     e.stopPropagation();
                                     setActive(index);
                                 }}
                             >
-                                <img src={findImage(product.name)} alt="" className="lg:tw-h-32 md:tw-h-24 sm:tw-h-20 sm:tw-w-auto tw-invisible sm:tw-visible tw-h-0 tw-w-0"/>
+                                <img src={findImage(product.name)} alt="" className="lg:tw-h-32 md:tw-h-24 sm:tw-h-20 sm:tw-w-auto  tw-h-16 tw-w-16 "/>
                                 {product.name}
                             </button>
                         )
@@ -222,7 +273,7 @@ export default function Booking({props}) {
                         {products[active].items.map((product, index)=>{
                             return (
                                 <div className="tw-flex tw-items-center tw-justify-center" data-aos = "fade-up" data-aos-once = {true}>
-                                    {products[active].name === "Chairs" || products[active].name === "Tables" ? <ChairCard product={product}/> : <ProductCard product={product}/>}
+                                    {products[active].name === "Chairs" || products[active].name === "Tables" ? <ChairCard product={product} index={index}/> : <ProductCard product={product} index={index}/>}
                                 </div>
                                 
                             )
