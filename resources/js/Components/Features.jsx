@@ -23,23 +23,33 @@ export default function Features({ props }) {
     }
 
     return (
-        <div id="features" className="text-center">
-            <div className="container" data-aos = "fade-up" data-aos-once = {true}>
-                <div className="col-md-10 col-md-offset-1 section-title">
+        <div id="" className="text-center tw-bg-blue-50 tw-pb-10">
+            <div className="container-fluid " data-aos = "fade-up" data-aos-once = {true}>
+                <div className=" section-title">
                 <h2>Products</h2>
                 </div>
-                <div className="row">
+                <div className="tw-w-full">
                 {props.features
                     ? props.features.map((feature, i) => {
                         return (
-                            <a href = {feature.name} className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200">
-                                <div key={`${feature.title}-${i}`} className="col-xs-6 col-md-3">
-                                    {" "}
-                                    <h3>{feature.title}</h3> 
-                                    <img src={findImage(feature.name)} alt="" />
-                                    <h5>{feature.products} Products</h5>
-                                    <p>{feature.text}</p>
-                                </div>     
+                            <a href = {feature.name} className="">
+                                <div className=" tw-bg-white hover:tw-bg-blue-100 tw-ease-in-out tw-duration-200 tw-shadow-lg tw-float-left 2xl:tw-w-[19.8%] xl:tw-w-[24.7%] lg:tw-w-[33%] sm:tw-w-[49.5%] tw-m-0.5"><
+                                    h3>
+                                        {feature.title}
+                                    </h3>
+                                    <div className="tw-h-72 tw-w-full tw-flex tw-justify-center tw-items-center">
+                                    <img src={findImage(feature.name)} alt="" className="tw-h-full tw-w-auto"/>     
+                                    </div>
+                                    
+                                    <div className="tw-p-5 tw-text-left tw-text-black">
+                                        
+                                        <div className="tw-text-4xl tw-my-2">{feature.products} Products</div>
+                                        <p className="lg:tw-text-2xl md:tw-text-xl">
+                                            {feature.text}
+                                        </p>
+                                    </div>
+                                        
+                                </div>
                             </a>
                                
                         )

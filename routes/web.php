@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Reviews;
 use Illuminate\Foundation\Application;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -73,7 +75,8 @@ Route::get('/home', function () {
     // $reviews = [];
     // Reviews::query()->delete();
     return Inertia::render('Home', [
-        'reviews' => $reviewObj
+        'reviews' => $reviewObj,
+        'status' => session("status")
     ]);
 })->name("home");
 
@@ -110,21 +113,31 @@ Route::get('/secret', function () {
 })->name('secret');
 
 Route::get('/booking', function () {
-    return Inertia::render('Booking');
+    $sessionData = session("data");
+    session()->flash("data", $sessionData);
+    return Inertia::render('Booking', [
+        'data' => json_decode($sessionData)
+    ]);
 })->name('booking');
 
 Route::get('/booking-form', function () {
-    return Inertia::render('BookingForm');
+    $sessionData = session("data");
+    session()->flash("data", $sessionData);
+    return Inertia::render('BookingForm', [
+        'routeData' => json_decode($sessionData)
+    ]);
 })->name('bookingForm');
 
-Route::post('/booking-submit', function () {
-    return Inertia::render('home');
-})->name('bookingSubmit');
+Route::post('/booking-submit', [BookingController::class, 'bookingRequest'])->name('bookingSubmit');
+
+Route::post("/booking-final", [BookingController::class, 'bookingFinal'])->name('bookingFinal');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+//Mail:to("email")->send(new BookingRequest());
 
 require __DIR__.'/auth.php';

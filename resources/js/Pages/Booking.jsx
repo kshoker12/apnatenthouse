@@ -1,5 +1,5 @@
 import NavBar from "@/Layouts/NavBar";
-import { Head, Link, useForm } from "@inertiajs/react";
+import { Head, Link, router, useForm } from "@inertiajs/react";
 import AppLogo from "../Components/applogo.png"
 import JsonData from '../../data/data.json';
 import { useState } from "react";
@@ -13,14 +13,19 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import { styled, Table, TableBody, TableHead, TableRow, TableContainer, Paper, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, useMediaQuery } from '@mui/material';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import { useTheme } from '@mui/material/styles';
+import { useEffect } from "react";
 
 
 
 
-export default function Booking({props}) {
+export default function Booking({data}) {
     const [active, setActive] = useState(0)
     const products = [JsonData.products[4],JsonData.products[0], JsonData.products[1], JsonData.products[2], JsonData.products[3]]
     const [openIndex, setOpenIndex] = useState(-1);
+    const [totalCost, setTotalCost] = useState(data ? data.totalCost : 0)
+    const [itemList, setItemList] = useState(data ? data.items : [])
+
+    console.log(data)
 
     function findImage(category) {
         switch (category) {
@@ -39,13 +44,142 @@ export default function Booking({props}) {
         }
     }
 
+    function ChairsMenu({quantity, setQuantity, element}) {
+
+        return (
+            <div className="tw-flex tw-items-center tw-justify-center">
+                <div className="tw-text-3xl tw-w-48">
+                    Quantity: {quantity}    
+                </div>
+                <div className="">
+                    <div className="tw-h-8">
+                        <button 
+                            className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                            onClick={()=>{
+                                if (quantity < 1000) {
+                                    setQuantity(quantity + 1)
+                                }
+                            }}
+                        >
+                            <i className="fas fa-caret-up tw-text-5xl"/>
+                        </button>    
+                    </div>
+                    <div className="">
+                        <button 
+                            className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                            onClick={()=>{
+                                if (quantity > 1) {
+                                    setQuantity(quantity - 1)
+                                }
+                            }}
+                        >
+                            <i className="fas fa-caret-down tw-text-5xl"/>
+                        </button>    
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    function TablesMenu({quantity, setQuantity, element}) {
+
+        return (
+            <div className="tw-flex tw-items-center tw-justify-center">
+                <div className="tw-text-3xl tw-w-48">
+                    Quantity: {quantity}    
+                </div>
+                <div className="">
+                    <div className="tw-h-8">
+                        <button 
+                            className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                            onClick={()=>{
+                                if (quantity < 1000) {
+                                    setQuantity(quantity + 1)
+                                }
+                            }}
+                        >
+                            <i className="fas fa-caret-up tw-text-5xl"/>
+                        </button>    
+                    </div>
+                    <div className="">
+                        <button 
+                            className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                            onClick={()=>{
+                                if (quantity > 1) {
+                                    setQuantity(quantity - 1)
+                                }
+                            }}
+                        >
+                            <i className="fas fa-caret-down tw-text-5xl"/>
+                        </button>    
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    function AddOnsMenu({quantity, setQuantity, element}) {
+
+        return (
+            <div className="tw-flex tw-items-center tw-justify-center">
+                <div className="tw-text-3xl tw-w-48">
+                    Quantity: {quantity}    
+                </div>
+                <div className="">
+                    <div className="tw-h-8">
+                        <button 
+                            className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                            onClick={()=>{
+                                if (quantity < 1000) {
+                                    setQuantity(quantity + 1)
+                                }
+                            }}
+                        >
+                            <i className="fas fa-caret-up tw-text-5xl"/>
+                        </button>    
+                    </div>
+                    <div className="">
+                        <button 
+                            className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                            onClick={()=>{
+                                if (quantity > 1) {
+                                    setQuantity(quantity - 1)
+                                }
+                            }}
+                        >
+                            <i className="fas fa-caret-down tw-text-5xl"/>
+                        </button>    
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    function BookingMenu({element, setQuantity, quantity}) {
+        switch (products[active].name) {
+            case "Chairs":
+                return <ChairsMenu element={element} setQuantity={setQuantity} quantity={quantity}/>
+            case "Tents":
+            case "Tables":
+                return <TablesMenu element = {element} setQuantity = {setQuantity} quantity = {quantity}/>
+            case "Floors":
+            case "Add-Ons":
+                return <AddOnsMenu element = {element} setQuantity = {setQuantity} quantity = {quantity}/>
+            default: 
+                break;
+        }
+    }
+
     
     function ResponsiveDialog() {
+        const [quantity, setQuantity] = useState(1);
+        
         
         const theme = useTheme();
         const fullScreen = useMediaQuery(theme.breakpoints.down(''));
 
         const activeProduct = openIndex > -1 ? products[active].items[openIndex]: 0;
+        const [name, setName] = useState(activeProduct.name);
 
         const handleClose = () => {
             setOpenIndex(-1);
@@ -59,23 +193,24 @@ export default function Booking({props}) {
                 aria-labelledby="responsive-dialog-title"
             >
                 <DialogTitle id="responsive-dialog-title">
-                    <div className="tw-text-black">
+                    <div className="tw-text-black h3">
                         {activeProduct.name}    
                     </div>
                 
                 </DialogTitle>
                 <DialogContent>
-                    <img src={activeProduct.image} className="tw-w-full tw-h-auto"/>
-                <DialogContentText>
-                    Let Google help apps determine location. This means sending anonymous
-                    location data to Google, even when no apps are running.
-                </DialogContentText>
+                    <div className="tw-h-full tw-w-[300px]">
+                        <div className="product-img-2 tw-flex tw-justify-center tw-items-center">
+                            <img src={activeProduct.image} className="tw-h-3/4 tw-w-auto"/>    
+                        </div>    
+                        <BookingMenu element={activeProduct} quantity={quantity} setQuantity={setQuantity}/>
+                    </div>
                 </DialogContent>
                 <DialogActions>
-                <Button autoFocus onClick={handleClose} size="large">
+                <Button autoFocus onClick={handleClose} size="large" style={{fontSize: 14}}>
                     Cancel
                 </Button>
-                <Button onClick={handleClose} autoFocus size="large">
+                <Button onClick={()=>{itemList.push({name:name,quantity:quantity, itemIndex: openIndex, productIndex: active});setTotalCost(totalCost + products[active].items[openIndex].cost * quantity);handleClose()}} autoFocus size="large" style={{fontSize: 14}}>
                     Confirm
                 </Button>
                 </DialogActions>
@@ -88,14 +223,17 @@ export default function Booking({props}) {
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: theme.palette.common.black,
         color: theme.palette.common.white,
-        fontSize: 14
+        fontSize: 14,
+        width:'70%'
     },
     [`&.${tableCellClasses.body}`]: {
         fontSize: 14,
+        width:'70%'
     },
     }));
 
     const StyledTableRow = styled(TableRow)(({ theme }) => ({
+
     '&:nth-of-type(odd)': {
         backgroundColor: theme.palette.action.hover,
     },
@@ -109,24 +247,13 @@ export default function Booking({props}) {
     return { name, calories};
     }
 
-    const rows = [
-    createData('Frozen yoghurt', 159),
-    createData('Ice cream sandwich', 237),
-    createData('Eclair', 262),
-    createData('Cupcake', 305),
-    createData('Gingerbread', 356),
-    ];
 
      function CustomizedTables() {
     return (
-        <TableContainer component={Paper} sx={{minHeight: 100, maxHeight: 700}} id = "inner-scroll">
+        <><TableContainer component={Paper} sx={{minHeight: 100, maxHeight: 700}} id = "inner-scroll">
             
         <Table stickyHeader>
-            <caption>
-                <div className="tw-text-2xl tw-text-center tw-text-black">
-                    Selected Items
-                </div>
-            </caption>
+            
             <TableHead>
             <TableRow>
                 <StyledTableCell>Item</StyledTableCell>
@@ -135,34 +262,60 @@ export default function Booking({props}) {
             </TableRow>
             </TableHead>
             <TableBody>
-            {rows.map((row) => (
+            {itemList.length > 0 ? itemList.map((row, index) => (
                 <StyledTableRow key={row.name}>
                     <StyledTableCell component="th" scope="row">
                         {row.name}
                     </StyledTableCell>
                     <StyledTableCell align="center">
                         <div className="tw-flex tw-items-center">
-                            {row.calories}
+                            {row.quantity}
                             <div className="tw-flex-1 tw-space-y-2 2xl:tw-ml-0 xl:tw-ml-1">
                                 <div className="tw-h-4">
-                                    <button><i className="fas fa-caret-up 2xl:tw-text-5xl tw-text-4xl tw-ease-in-out tw-duration-200 hover:tw-text-blue-700 "/></button>   
+                                    <button onClick={()=>{
+                                        let itemsClone = JSON.parse(JSON.stringify(itemList));
+                                        itemsClone[index].quantity += 1;
+                                        setItemList(itemsClone)
+                                        setTotalCost(totalCost +  products[row.productIndex].items[row.itemIndex].cost)
+                                    }}><i className="fas fa-caret-up 2xl:tw-text-5xl tw-text-4xl tw-ease-in-out tw-duration-200 hover:tw-text-blue-700 "/></button>   
                                 </div>
                                 <div className="">
-                                    <button><i className="fas fa-caret-down 2xl:tw-text-5xl tw-text-4xl tw-ease-in-out tw-duration-200 hover:tw-text-blue-700"/></button>   
+                                    <button onClick={()=>{
+                                        if (row.quantity > 1) {
+                                            let itemsClone = JSON.parse(JSON.stringify(itemList));
+                                            itemsClone[index].quantity -= 1;
+                                            setItemList(itemsClone)
+                                            setTotalCost(totalCost -  products[row.productIndex].items[row.itemIndex].cost)    
+                                        }
+                                        
+                                    }}><i className="fas fa-caret-down 2xl:tw-text-5xl tw-text-4xl tw-ease-in-out tw-duration-200 hover:tw-text-blue-700"/></button>   
                                 </div>
                             </div>
                         </div>
                     </StyledTableCell>
                     <StyledTableCell align="center">
-                        <button>
+                        <button onClick={()=>{
+                            setTotalCost(totalCost - products[row.productIndex].items[row.itemIndex].cost * row.quantity)
+                            let itemsClone = JSON.parse(JSON.stringify(itemList));
+                            itemsClone.splice(index, 1);
+                            setItemList(itemsClone)
+                            
+                        }}>
                             <i className="fas fa-trash tw-text-red-600 tw-text-3xl tw-ease-in-out tw-duration-200 hover:tw-opacity-60"/>
                         </button>
                     </StyledTableCell>
                 </StyledTableRow>
-            ))}
+            )):<></>}
             </TableBody>
         </Table>
         </TableContainer>
+            <div className="tw-bg-white tw-py-5 tw-border-gray-300" style={{borderTopWidth:1}}>
+                <div className="tw-text-2xl tw-text-center tw-text-black">
+                    Selected Items: ${totalCost}
+                </div>
+            </div>
+        </>
+        
     );
     }
 
@@ -261,7 +414,13 @@ export default function Booking({props}) {
                     <div className="xl:tw-w-2/5 lg:tw-w-1/2 tw-h-full tw-py-10 xl:tw-visible tw-invisible tw-absolute xl:tw-relative">
                         <CustomizedTables/>
                         <div className="tw-flex tw-justify-center tw-mt-4">
-                            <a href={route("bookingForm")}>
+                            <a onClick = {()=>{
+                                    try {
+                                        router.post(route("bookingSubmit"), {data: {items: itemList, totalCost: totalCost}})
+                                    } catch (error) {
+                                        console.error(error)
+                                    }
+                                }}>
                                 <PrimaryButton className="">
                                     Submit
                                 </PrimaryButton>    
@@ -281,7 +440,13 @@ export default function Booking({props}) {
                         <div className=" tw-h-full tw-py-10 xl:tw-hidden lg:tw-block tw-hidden">
                             <CustomizedTables/>
                             <div className="tw-flex tw-justify-center tw-mt-4">
-                                <a href={route("bookingForm")}>
+                                <a onClick = {()=>{
+                                    try {
+                                        router.post(route("bookingSubmit"), {data: {items: itemList, totalCost: totalCost}})
+                                    } catch (error) {
+                                        console.error(error)
+                                    }
+                                }}>
                                     <PrimaryButton className="">
                                         Submit
                                     </PrimaryButton>    
@@ -293,7 +458,13 @@ export default function Booking({props}) {
                 <div className=" tw-h-full tw-py-10 lg:tw-hidden">
                         <CustomizedTables/>
                         <div className="tw-flex tw-justify-center tw-mt-4">
-                            <a href={route("bookingForm")}>
+                            <a onClick = {()=>{
+                                    try {
+                                        router.post(route("bookingSubmit"),{data: {items: itemList, totalCost: totalCost}})
+                                    } catch (error) {
+                                        console.error(error)
+                                    }
+                                }}>
                                 <PrimaryButton className="">
                                     Submit
                                 </PrimaryButton>    

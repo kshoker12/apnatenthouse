@@ -7,8 +7,9 @@ import InputError from "@/Components/InputError";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { Card, Input, Button, Typography} from "@material-tailwind/react";
 import Checkbox from "@/Components/Checkbox";
+import { useState } from "react";
 
-export default function BookingForm({}) {
+export default function BookingForm({routeData}) {
     const { data, setData, post, processing, errors, reset } = useForm({
         firstname: '',
         lastname: '',
@@ -23,10 +24,27 @@ export default function BookingForm({}) {
         setup: false
     });
 
+    const [totalCost, setTotalCost] = useState(routeData.totalCost);
+    const [itemsList, setItems] = useState(routeData.items)
+
     const submit = (e) => {
         e.preventDefault();
 
-        post(route('bookingSubmit'));
+        post(route('bookingFinal', {information: {
+            firstname: data.firstname,
+            lastname: data.lastname,
+            email: data.email,
+            phone: data.phone,
+            address: data.address,
+            date: data.date,
+            preffered: data.preffered,
+            yard: data.yard,
+            additional: data.additional,
+            protection: data.protection,
+            setup: data.setup,
+            totalCost: totalCost,
+            itemsList: itemsList
+        }}));
     };
 
     return (
@@ -175,7 +193,7 @@ export default function BookingForm({}) {
                                         id="date"
                                         type="date"
                                         name="date"
-                                        value={data.phone}
+                                        value={data.date}
                                         className="tw-block xl:tw-w-96 lg:tw-w-72 md:tw-w-80 sm:tw-w-64 tw-w-96"
                                         autoComplete="date"
                                         onChange={(e) => setData('date', e.target.value)}
@@ -200,7 +218,7 @@ export default function BookingForm({}) {
                                                 checked={data.preffered === "Phone"}
                                                 autoComplete="preferred"
                                                 onClick={(e) => setData('preffered', e.target.value)}
-                                                required
+                                                
                                             />
                                             <div htmlFor="" className=" tw-font-medium tw-pt-1">Phone</div>    
                                         </div>
@@ -212,7 +230,7 @@ export default function BookingForm({}) {
                                                 checked={data.preffered === "Email"}
                                                 autoComplete="preferred"
                                                 onClick={(e) => setData('preffered', e.target.value)}
-                                                required
+                                                
                                             />
                                             <div htmlFor="" className=" tw-font-medium tw-pt-1">Email</div>    
                                         </div>
@@ -295,7 +313,7 @@ export default function BookingForm({}) {
                                         className="tw-block xl:tw-w-96 md:tw-w-80 tw-h-64 lg:tw-w-72 sm:tw-w-64 tw-w-96 tw-border-gray-600 focus:tw-border-indigo-500 focus:tw-ring-indigo-500 tw-rounded-md tw-shadow-sm tw-text-xl"
                                         autoComplete="additional"
                                         onChange={(e) => setData('additional', e.target.value)}
-                                        required
+                      
                                     />
 
                                     <InputError message={errors.additional} className="" />
@@ -308,17 +326,17 @@ export default function BookingForm({}) {
                                 <h1 className="">Quote Summary</h1>   
                             </div>
                             <ul className="summary tw-px-6 tw-space-y-6 tw-w-full" id = "inner-scroll">
-                                {Array(20).fill("Marquee Tent: 30ftx30ft Qty 3").map((item)=>{
+                                {itemsList.map((item)=>{
                                     return (
                                         <li className="xl:tw-text-3xl md:tw-text-2xl tw-flex tw-items-center tw-justify-start sm:tw-text-4xl">
                                             <i className="fa fa-chevron-right tw-text-blue-500 tw-px-7 xl:tw-text-4xl md:tw-text-3xl sm:tw-text-4xl"/>
-                                            {item}
+                                            {item.name + " - Qty: " + item.quantity }
                                         </li>    
                                     )
                                 })}    
                             </ul>
                             <div className="tw-px-6 tw-py-4">
-                                <h4 className=""><strong>Estimated Cost:</strong> $5,888.00</h4>
+                                <h4 className=""><strong>Estimated Cost:</strong> ${totalCost.toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2})}</h4>
                             </div>
                         </div>
                         

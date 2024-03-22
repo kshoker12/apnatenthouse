@@ -12,6 +12,7 @@ html {
   font-weight: 400;
   width: 100% !important;
   height: 100% !important;
+  scroll-behavior:smooth
 }
 h2,
 h3,
@@ -146,7 +147,7 @@ hr {
   background-color: #608dfd;
 }
 .section-title {
-  margin-bottom: 70px;
+  margin-bottom: 20px;
 }
 .section-title h2 {
   position: relative;
