@@ -9,7 +9,7 @@ import floorsImg from "../Components/floors.png";
 import addOnImg from "../Components/bars.png";
 import tablesImg from "../Components/tables.png";
 import PrimaryButton from "@/Components/PrimaryButton";   
-
+import React from "react";
 import { styled, Table, TableBody, TableHead, TableRow, TableContainer, Paper, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, useMediaQuery, TextField, Alert, Typography } from '@mui/material';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import { useTheme } from '@mui/material/styles';
@@ -20,85 +20,83 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
-// import OutlinedInput from '@mui/material/OutlinedInput';
-// import InputLabel from '@mui/material/InputLabel';
-// import MenuItem from '@mui/material/MenuItem';
-// import Select from '@mui/material/Select';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
 
-// const ITEM_HEIGHT = 48;
-// const ITEM_PADDING_TOP = 8;
-// const MenuProps = {
-//   PaperProps: {
-//     style: {
-//       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-//       width: 250,
-//     },
-//   },
-// };
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
+};
 
-// const names = [
-//   'Oliver Hansen',
-//   'Van Henry',
-//   'April Tucker',
-//   'Ralph Hubbard',
-//   'Omar Alexander',
-//   'Carlos Abbott',
-//   'Miriam Wagner',
-//   'Bradley Wilkerson',
-//   'Virginia Andrews',
-//   'Kelly Snyder',
-// ];
+const names = [
+  '30ft x 20ft',
+  '30ft x 30ft',
+  '30ft x 40ft',
+  '30ft x 50ft',
+  '30ft x 60ft',
+  '30ft x 70ft',
+  '30ft x 80ft',
+  '30ft x 90ft',
+  '30ft x 100ft',
+  '30ft x 120ft',
+  '30ft x 150ft',
+  '30ft x 180ft',
+  '30ft x 200ft',
+];
 
-// function getStyles(name, personName, theme) {
-//   return {
-//     fontWeight:
-//       personName.indexOf(name) === -1
-//         ? theme.typography.fontWeightRegular
-//         : theme.typography.fontWeightMedium,
-//   };
-// }
+function getStyles(name, personName, theme) {
+  return {
+    fontWeight:
+      personName.indexOf(name) === -1
+        ? theme.typography.fontWeightRegular
+        : theme.typography.fontWeightMedium,
+  };
+}
 
-// function MultipleSelect() {
-//   const theme = useTheme();
-//   const [personName, setPersonName] = React.useState([]);
+function MultipleSelect({setSelectedSize}) {
+  const theme = useTheme();
+  const [personName, setPersonName] = React.useState([]);
 
-//   const handleChange = (event) => {
-//     const {
-//       target: { value },
-//     } = event;
-//     setPersonName(
-//       // On autofill we get a stringified value.
-//       typeof value === 'string' ? value.split(',') : value,
-//     );
-//   };
+  const handleChange = (event) => {
+    setPersonName(event.target.value)
+    setSelectedSize(event.target.value)
+  };
 
-//   return (
-//     <div>
-//       <FormControl sx={{ m: 1, width: 300 }}>
-//         <InputLabel id="demo-multiple-name-label">Name</InputLabel>
-//         <Select
-//           labelId="demo-multiple-name-label"
-//           id="demo-multiple-name"
-//           multiple
-//           value={personName}
-//           onChange={handleChange}
-//           input={<OutlinedInput label="Name" />}
-//           MenuProps={MenuProps}
-//         >
-//           {names.map((name) => (
-//             <MenuItem
-//               key={name}
-//               value={name}
-//               style={getStyles(name, personName, theme)}
-//             >
-//               {name}
-//             </MenuItem>
-//           ))}
-//         </Select>
-//       </FormControl>
-//     </div>
-//   );
-// }
+  return (
+    <div>
+      <FormControl sx={{ m: 1, width: 300 }}>
+        <InputLabel id="demo-multiple-name-label" sx={{fontSize:14, color:"black"}}>Size</InputLabel>
+        <Select
+          labelId="demo-multiple-name-label"
+          id="demo-multiple-name"
+          value={personName}
+          onChange={handleChange}
+          input={<OutlinedInput label="Size" sx={{fontSize:14, color:"black"}}/>}
+          MenuProps={MenuProps}
+        >
+          {names.map((name) => (
+            <MenuItem
+              key={name}
+              value={name}
+              sx={{fontSize:14}}
+              style={getStyles(name, personName, theme)}
+            >
+              {name}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    </div>
+  );
+}
 
 
 export default function Booking({data}) {
@@ -418,12 +416,32 @@ export default function Booking({data}) {
         const [squareFeet, setSquareFeet] = useState(81);
 
         useEffect(()=>{
-            if (selectedSize === "9ft x 9ft") {
-                setSquareFeet(81)
-            } else if (selectedSize === "12ft x 12ft") {
-                setSquareFeet(144);
-            } else if (selectedSize === "15ft x 15ft") {
-                setSquareFeet(225)
+            if (selectedSize === "30ft x 20ft") {
+                setSquareFeet(600)
+            } else if (selectedSize === "30ft x 30ft") {
+                setSquareFeet(900);
+            } else if (selectedSize === "30ft x 40ft") {
+                setSquareFeet(1200)
+            } else if (selectedSize === "30ft x 50ft") {
+                setSquareFeet(1500)
+            } else if (selectedSize === "30ft x 60ft") {
+                setSquareFeet(1800);
+            } else if (selectedSize === "30ft x 70ft") {
+                setSquareFeet(2100)
+            } else if (selectedSize === "30ft x 80ft") {
+                setSquareFeet(2400)
+            } else if (selectedSize === "30ft x 90ft") {
+                setSquareFeet(2700);
+            } else if (selectedSize === "30ft x 100ft") {
+                setSquareFeet(3000)
+            } else if (selectedSize === "30ft x 120ft") {
+                setSquareFeet(3600)
+            } else if (selectedSize === "30ft x 150ft") {
+                setSquareFeet(4500);
+            } else if (selectedSize === "30ft x 180ft") {
+                setSquareFeet(5400)
+            } else if (selectedSize === "30ft x 200ft") {
+                setSquareFeet(6000)
             }
         },[selectedSize])
 
@@ -432,8 +450,8 @@ export default function Booking({data}) {
         },[squareFeet])
 
         return (
-            <div className="tw-flex tw-w-2/3 tw-justify-center">
-                <RadioButtonsGroup values = {element.sizes} setSize={setSelectedSize}/>
+            <div className="tw-flex tw-w-full tw-justify-center">
+                <MultipleSelect setSelectedSize={setSelectedSize}/>
             </div>
         )
     }
