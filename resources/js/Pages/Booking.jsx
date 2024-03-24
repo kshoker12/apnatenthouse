@@ -10,12 +10,95 @@ import addOnImg from "../Components/bars.png";
 import tablesImg from "../Components/tables.png";
 import PrimaryButton from "@/Components/PrimaryButton";   
 
-import { styled, Table, TableBody, TableHead, TableRow, TableContainer, Paper, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, useMediaQuery } from '@mui/material';
+import { styled, Table, TableBody, TableHead, TableRow, TableContainer, Paper, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, useMediaQuery, TextField, Alert, Typography } from '@mui/material';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import { useTheme } from '@mui/material/styles';
 import { useEffect } from "react";
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
+// import OutlinedInput from '@mui/material/OutlinedInput';
+// import InputLabel from '@mui/material/InputLabel';
+// import MenuItem from '@mui/material/MenuItem';
+// import Select from '@mui/material/Select';
 
+// const ITEM_HEIGHT = 48;
+// const ITEM_PADDING_TOP = 8;
+// const MenuProps = {
+//   PaperProps: {
+//     style: {
+//       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+//       width: 250,
+//     },
+//   },
+// };
+
+// const names = [
+//   'Oliver Hansen',
+//   'Van Henry',
+//   'April Tucker',
+//   'Ralph Hubbard',
+//   'Omar Alexander',
+//   'Carlos Abbott',
+//   'Miriam Wagner',
+//   'Bradley Wilkerson',
+//   'Virginia Andrews',
+//   'Kelly Snyder',
+// ];
+
+// function getStyles(name, personName, theme) {
+//   return {
+//     fontWeight:
+//       personName.indexOf(name) === -1
+//         ? theme.typography.fontWeightRegular
+//         : theme.typography.fontWeightMedium,
+//   };
+// }
+
+// function MultipleSelect() {
+//   const theme = useTheme();
+//   const [personName, setPersonName] = React.useState([]);
+
+//   const handleChange = (event) => {
+//     const {
+//       target: { value },
+//     } = event;
+//     setPersonName(
+//       // On autofill we get a stringified value.
+//       typeof value === 'string' ? value.split(',') : value,
+//     );
+//   };
+
+//   return (
+//     <div>
+//       <FormControl sx={{ m: 1, width: 300 }}>
+//         <InputLabel id="demo-multiple-name-label">Name</InputLabel>
+//         <Select
+//           labelId="demo-multiple-name-label"
+//           id="demo-multiple-name"
+//           multiple
+//           value={personName}
+//           onChange={handleChange}
+//           input={<OutlinedInput label="Name" />}
+//           MenuProps={MenuProps}
+//         >
+//           {names.map((name) => (
+//             <MenuItem
+//               key={name}
+//               value={name}
+//               style={getStyles(name, personName, theme)}
+//             >
+//               {name}
+//             </MenuItem>
+//           ))}
+//         </Select>
+//       </FormControl>
+//     </div>
+//   );
+// }
 
 
 export default function Booking({data}) {
@@ -44,7 +127,42 @@ export default function Booking({data}) {
         }
     }
 
-    function ChairsMenu({quantity, setQuantity, element}) {
+    function ChairsMenu({quantity, setQuantity, element, error, setError}) {
+
+        return (
+            <>
+                <div className="tw-flex tw-items-center tw-justify-center">
+                    <TextField value = {quantity} onChange = {(e)=>{if (!isNaN(e.target.value)) {setQuantity(e.target.value); setError("")}}} id="filled-basic" label="Quantity" variant="filled" InputLabelProps = {{style: {fontSize: 14}}} inputProps={{style: {fontSize: 14}}}/> 
+                    
+                </div>
+                {error.length ?
+                    <div className="tw-absolute tw-flex tw-items-center tw-justify-center tw-w-5/6 tw-text-red-500">
+                        {error}
+                    </div>
+                    :<></>}
+            </>
+            
+        )
+    }
+
+    function TablesMenu({quantity, setQuantity, element, error, setError}) {
+
+        return (
+            <>
+                <div className="tw-flex tw-items-center tw-justify-center">
+                    <TextField value = {quantity} onChange = {(e)=>{if (!isNaN(e.target.value)) {setQuantity(e.target.value); setError("")}}} id="filled-basic" label="Quantity" variant="filled" InputLabelProps = {{style: {fontSize: 14}}} inputProps={{style: {fontSize: 14}}}/> 
+                    
+                </div>
+                {error.length ?
+                    <div className="tw-absolute tw-flex tw-items-center tw-justify-center tw-w-5/6 tw-text-red-500">
+                        {error}
+                    </div>
+                    :<></>}
+            </>
+        )
+    }
+
+    function AddOnsMenu({quantity, setQuantity, element, error, setError}) {
 
         return (
             <div className="tw-flex tw-items-center tw-justify-center">
@@ -81,90 +199,265 @@ export default function Booking({data}) {
         )
     }
 
-    function TablesMenu({quantity, setQuantity, element}) {
+    function RadioButtonsGroup({values, setSize}) {
+        return (
+          <FormControl>
+            <FormLabel id="demo-radio-buttons-group-label" sx={{fontSize: 20, color: "black"}}>Size</FormLabel>
+            <RadioGroup
+              aria-labelledby="demo-radio-buttons-group-label"
+              defaultValue={values[0]}
+              name="radio-buttons-group"
+              onChange={(e)=>{
+                setSize(e.target.value)
+              }}
+            >
+              {values.map((value, index)=>{
+                  return (
+                  <FormControlLabel value={value} control={<Radio size="large"/>} label={<Typography variant="p" sx = {{fontSize:14}} color="black">{value}</Typography>} sx={{color:"black"}}/>    
+                  )
+              })}
+      
+            </RadioGroup>
+          </FormControl>
+        );
+      }
+
+    function WoodenFloorMenu({quantity, setQuantity, element, error, setError, setSelectedSize, selectedSize, setCost, cost}) {
+        const [squareFeet, setSquareFeet] = useState(81);
+
+        useEffect(()=>{
+            if (selectedSize === "9ft x 9ft") {
+                setSquareFeet(81)
+            } else if (selectedSize === "12ft x 12ft") {
+                setSquareFeet(144);
+            } else if (selectedSize === "15ft x 15ft") {
+                setSquareFeet(225)
+            }
+        },[selectedSize])
+
+        useEffect(()=>{
+            setCost(element.cost * squareFeet);
+        },[squareFeet])
 
         return (
-            <div className="tw-flex tw-items-center tw-justify-center">
-                <div className="tw-text-3xl tw-w-48">
-                    Quantity: {quantity}    
-                </div>
-                <div className="">
-                    <div className="tw-h-8">
-                        <button 
-                            className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
-                            onClick={()=>{
-                                if (quantity < 1000) {
-                                    setQuantity(quantity + 1)
-                                }
-                            }}
-                        >
-                            <i className="fas fa-caret-up tw-text-5xl"/>
-                        </button>    
-                    </div>
-                    <div className="">
-                        <button 
-                            className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
-                            onClick={()=>{
-                                if (quantity > 1) {
-                                    setQuantity(quantity - 1)
-                                }
-                            }}
-                        >
-                            <i className="fas fa-caret-down tw-text-5xl"/>
-                        </button>    
-                    </div>
-                </div>
+            <div className="tw-flex tw-w-2/3 tw-justify-center">
+                <RadioButtonsGroup values = {element.sizes} setSize={setSelectedSize}/>
             </div>
         )
     }
 
-    function AddOnsMenu({quantity, setQuantity, element}) {
+    function ClickInFloorMenu({quantity, setQuantity, element, error, setError, setSelectedSize, selectedSize, setCost}) {
+        const [length, setLength] = useState(8);
+        const [width, setWidth] = useState(8)
+        const [squareFeet, setSquareFeet] = useState(64)
+        const [custom, setCustom] = useState(false)
+
+        useEffect(()=>{
+            if (selectedSize === "Custom") {
+                setCustom(true);
+                setSelectedSize(length + "ft x " + width + "ft (custom)")
+                setSquareFeet(length * width)
+            } else if (element.sizes.includes(selectedSize)) {
+                setCustom(false)
+                if (selectedSize === "8ft x 8ft") {
+                    setSquareFeet(64);
+                } else if (selectedSize === "12ft x 12ft") {
+                    setSquareFeet(144);
+                } else if (selectedSize === "16ft x 16ft") {
+                    setSquareFeet(256)
+                }
+            }
+        },[selectedSize])
+
+        useEffect(()=>{
+            setCost(squareFeet * element.cost)
+        },[squareFeet])
 
         return (
-            <div className="tw-flex tw-items-center tw-justify-center">
-                <div className="tw-text-3xl tw-w-48">
-                    Quantity: {quantity}    
+            <>
+                <div className="tw-flex tw-w-2/3 tw-justify-center">
+                    <RadioButtonsGroup values = {element.sizes} setSize={setSelectedSize}/>
+                    
                 </div>
-                <div className="">
-                    <div className="tw-h-8">
-                        <button 
-                            className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
-                            onClick={()=>{
-                                if (quantity < 1000) {
-                                    setQuantity(quantity + 1)
-                                }
-                            }}
-                        >
-                            <i className="fas fa-caret-up tw-text-5xl"/>
-                        </button>    
+                {custom ?
+                    <div className="tw-flex tw-justify-center tw-space-x-4 tw-items-center tw-w-full">
+                        <div className="tw-flex tw-items-center tw-justify-center tw-space-x-4">
+                            <div className="tw-text-3xl">
+                                Length: {length}ft
+                            </div>
+                            <div className="">
+                                <div className="tw-h-8">
+                                    <button 
+                                        className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                                        onClick={()=>{
+                                            if ((length + 2) * width <= 3000) {
+                                                setLength(length + 2)
+                                                setSelectedSize(length + "ft x " + width + "ft (custom)")
+                                                setSquareFeet(length * width)
+                                            }
+                                        }}
+                                    >
+                                        <i className="fas fa-caret-up tw-text-5xl"/>
+                                    </button>    
+                                </div>
+                                <div className="">
+                                    <button 
+                                        className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                                        onClick={()=>{
+                                            if (length >= 10) {
+                                                setLength(length - 2)
+                                                setSelectedSize(length + "ft x " + width + "ft (custom)")
+                                                setSquareFeet(length * width)
+                                            }
+                                        }}
+                                    >
+                                        <i className="fas fa-caret-down tw-text-5xl"/>
+                                    </button>    
+                                </div>
+                            </div>    
+                        </div>
+                        <div className="tw-text-3xl">x</div>
+                        <div className="tw-flex tw-justify-center tw-items-center tw-space-x-4">
+                            <div className="tw-text-3xl">
+                                Width: {width} ft   
+                            </div>
+                            <div className="">
+                                <div className="tw-h-8">
+                                    <button 
+                                        className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                                        onClick={()=>{
+                                            if ((width + 1) * length <= 3000) {
+                                                setWidth(width + 1)
+                                                setSelectedSize(length + "ft x " + width + "ft (custom)")
+                                                setSquareFeet(length * width)
+                                            }
+                                        }}
+                                    >
+                                        <i className="fas fa-caret-up tw-text-5xl"/>
+                                    </button>    
+                                </div>
+                                <div className="">
+                                    <button 
+                                        className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                                        onClick={()=>{
+                                            if (width >= 9) {
+                                                setWidth(width - 1)
+                                                setSelectedSize(length + "ft x " + width + "ft (custom)")
+                                                setSquareFeet(length * width)
+                                            }
+                                        }}
+                                    >
+                                        <i className="fas fa-caret-down tw-text-5xl"/>
+                                    </button>    
+                                </div>
+                            </div>    
+                        </div>
+                        
+                    </div>
+                :
+                    <>
+                    </>
+                }
+            </>
+        )
+    }
+
+
+
+    function PopUpTentMenu({cost, setCost, quantity, setQuantity, element, error, setError, setSelectedSize, selectedSize}) {
+        useEffect(()=>{
+            if (selectedSize === "10ft x 10ft") {
+                setCost(100)
+            } else if (selectedSize === "10ft x 20ft") {
+                setCost(150)
+            }
+        },[selectedSize])
+
+        return (
+            <>
+                <div className="tw-flex tw-w-2/3 tw-justify-center">
+                    <RadioButtonsGroup values = {element.sizes} setSize={setSelectedSize}/>
+                </div>
+                <div className="tw-flex tw-items-center tw-justify-center">
+                    <div className="tw-text-3xl tw-w-48">
+                        Quantity: {quantity}    
                     </div>
                     <div className="">
-                        <button 
-                            className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
-                            onClick={()=>{
-                                if (quantity > 1) {
-                                    setQuantity(quantity - 1)
-                                }
-                            }}
-                        >
-                            <i className="fas fa-caret-down tw-text-5xl"/>
-                        </button>    
+                        <div className="tw-h-8">
+                            <button 
+                                className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                                onClick={()=>{
+                                    if (quantity < 1000) {
+                                        setQuantity(quantity + 1)
+                                    }
+                                }}
+                            >
+                                <i className="fas fa-caret-up tw-text-5xl"/>
+                            </button>    
+                        </div>
+                        <div className="">
+                            <button 
+                                className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                                onClick={()=>{
+                                    if (quantity > 1) {
+                                        setQuantity(quantity - 1)
+                                    }
+                                }}
+                            >
+                                <i className="fas fa-caret-down tw-text-5xl"/>
+                            </button>    
+                        </div>
                     </div>
                 </div>
+            </>
+            
+        )
+    }
+
+    function FrameTentMenu({quantity, setQuantity, element, error, setError, setSelectedSize, selectedSize, setCost, cost}) {
+        const [squareFeet, setSquareFeet] = useState(81);
+
+        useEffect(()=>{
+            if (selectedSize === "9ft x 9ft") {
+                setSquareFeet(81)
+            } else if (selectedSize === "12ft x 12ft") {
+                setSquareFeet(144);
+            } else if (selectedSize === "15ft x 15ft") {
+                setSquareFeet(225)
+            }
+        },[selectedSize])
+
+        useEffect(()=>{
+            setCost(element.cost * squareFeet);
+        },[squareFeet])
+
+        return (
+            <div className="tw-flex tw-w-2/3 tw-justify-center">
+                <RadioButtonsGroup values = {element.sizes} setSize={setSelectedSize}/>
             </div>
         )
     }
 
-    function BookingMenu({element, setQuantity, quantity}) {
+    function BookingMenu({element, setQuantity, quantity, error, setError, selectedSize, setSelectedSize, cost, setCost}) {
         switch (products[active].name) {
             case "Chairs":
-                return <ChairsMenu element={element} setQuantity={setQuantity} quantity={quantity}/>
+                return <ChairsMenu element={element} setQuantity={setQuantity} quantity={quantity} error={error} setError={setError}/>
             case "Tents":
+                if (products[active].items[openIndex].name === "Pop-up Tent") {
+                    return <PopUpTentMenu cost = {cost} setCost={setCost} selectedSize = {selectedSize} setSelectedSize = {setSelectedSize} element = {element} setQuantity = {setQuantity} quantity = {quantity} error={error} setError={setError}/>
+                } else if (products[active].items[openIndex].name === "Frame Tent") {
+                    return <FrameTentMenu cost = {cost} setCost={setCost} selectedSize = {selectedSize} setSelectedSize = {setSelectedSize} element = {element} setQuantity = {setQuantity} quantity = {quantity} error={error} setError={setError}/>
+                }
             case "Tables":
-                return <TablesMenu element = {element} setQuantity = {setQuantity} quantity = {quantity}/>
+                return <TablesMenu element = {element} setQuantity = {setQuantity} quantity = {quantity} error={error} setError={setError}/>
             case "Floors":
+                if (products[active].items[openIndex].name === "Wooden Dance Floor") {
+                    return <WoodenFloorMenu  cost={cost} setCost={setCost} selectedSize = {selectedSize} setSelectedSize = {setSelectedSize} element = {element} setQuantity = {setQuantity} quantity = {quantity} error={error} setError={setError}/>
+                } else if (products[active].items[openIndex].name === "Click-in Dance Floor") {
+                    return <ClickInFloorMenu setCost = {setCost} selectedSize = {selectedSize} setSelectedSize = {setSelectedSize} element = {element} setQuantity = {setQuantity} quantity = {quantity} error={error} setError={setError}/>
+                }
             case "Add-Ons":
-                return <AddOnsMenu element = {element} setQuantity = {setQuantity} quantity = {quantity}/>
+                return <AddOnsMenu element = {element} setQuantity = {setQuantity} quantity = {quantity} error={error} setError={setError}/>
             default: 
                 break;
         }
@@ -173,13 +466,15 @@ export default function Booking({data}) {
     
     function ResponsiveDialog() {
         const [quantity, setQuantity] = useState(1);
-        
+        const [error, setError] = useState("");
         
         const theme = useTheme();
         const fullScreen = useMediaQuery(theme.breakpoints.down(''));
 
         const activeProduct = openIndex > -1 ? products[active].items[openIndex]: 0;
         const [name, setName] = useState(activeProduct.name);
+        const [selectedSize, setSelectedSize] = useState(activeProduct.sizes ? activeProduct.sizes[0]: "")
+        const [cost, setCost] = useState(activeProduct.cost)
 
         const handleClose = () => {
             setOpenIndex(-1);
@@ -192,25 +487,36 @@ export default function Booking({data}) {
                 onClose={handleClose}
                 aria-labelledby="responsive-dialog-title"
             >
-                <DialogTitle id="responsive-dialog-title">
-                    <div className="tw-text-black h3">
+                <DialogTitle id="responsive-dialog-title" sx={{paddingTop: 0, paddingBottom: 0, textTransform: "capitalize"}} >
+                    <div className="tw-text-black h3 tw-py-0">
                         {activeProduct.name}    
                     </div>
                 
                 </DialogTitle>
                 <DialogContent>
-                    <div className="tw-h-full tw-w-[300px]">
-                        <div className="product-img-2 tw-flex tw-justify-center tw-items-center">
+                    <div className="tw-h-fit tw-w-full">
+                        <div className="tw-flex tw-justify-center tw-items-center md:tw-h-[300px] tw-h-[250px] tw-w-full">
                             <img src={activeProduct.image} className="tw-h-3/4 tw-w-auto"/>    
                         </div>    
-                        <BookingMenu element={activeProduct} quantity={quantity} setQuantity={setQuantity}/>
+                        <BookingMenu cost = {cost} setCost = {setCost} selectedSize = {selectedSize} setSelectedSize = {setSelectedSize} element={activeProduct} quantity={quantity} setQuantity={setQuantity} error={error} setError={setError}/>
                     </div>
                 </DialogContent>
                 <DialogActions>
                 <Button autoFocus onClick={handleClose} size="large" style={{fontSize: 14}}>
                     Cancel
                 </Button>
-                <Button onClick={()=>{itemList.push({name:name,quantity:quantity, itemIndex: openIndex, productIndex: active});setTotalCost(totalCost + products[active].items[openIndex].cost * quantity);handleClose()}} autoFocus size="large" style={{fontSize: 14}}>
+                <Button onClick={()=>{
+                    if (!isNaN(quantity) && quantity >= 1) {
+                        itemList.push({name:name + " " + selectedSize,quantity:parseInt(quantity), itemIndex: openIndex, productIndex: active, cost: cost});
+                        setTotalCost(totalCost + cost * quantity);handleClose()
+                    } else {
+                        setError("Please enter a quantity")
+                    }
+                }} 
+                    autoFocus 
+                    size="large" 
+                    style={{fontSize: 14}}
+                >
                     Confirm
                 </Button>
                 </DialogActions>
@@ -276,7 +582,7 @@ export default function Booking({data}) {
                                         let itemsClone = JSON.parse(JSON.stringify(itemList));
                                         itemsClone[index].quantity += 1;
                                         setItemList(itemsClone)
-                                        setTotalCost(totalCost +  products[row.productIndex].items[row.itemIndex].cost)
+                                        setTotalCost(totalCost + row.cost)
                                     }}><i className="fas fa-caret-up 2xl:tw-text-5xl tw-text-4xl tw-ease-in-out tw-duration-200 hover:tw-text-blue-700 "/></button>   
                                 </div>
                                 <div className="">
@@ -285,7 +591,7 @@ export default function Booking({data}) {
                                             let itemsClone = JSON.parse(JSON.stringify(itemList));
                                             itemsClone[index].quantity -= 1;
                                             setItemList(itemsClone)
-                                            setTotalCost(totalCost -  products[row.productIndex].items[row.itemIndex].cost)    
+                                            setTotalCost(totalCost - row.cost)    
                                         }
                                         
                                     }}><i className="fas fa-caret-down 2xl:tw-text-5xl tw-text-4xl tw-ease-in-out tw-duration-200 hover:tw-text-blue-700"/></button>   
@@ -295,7 +601,7 @@ export default function Booking({data}) {
                     </StyledTableCell>
                     <StyledTableCell align="center">
                         <button onClick={()=>{
-                            setTotalCost(totalCost - products[row.productIndex].items[row.itemIndex].cost * row.quantity)
+                            setTotalCost(totalCost - row.cost * row.quantity)
                             let itemsClone = JSON.parse(JSON.stringify(itemList));
                             itemsClone.splice(index, 1);
                             setItemList(itemsClone)

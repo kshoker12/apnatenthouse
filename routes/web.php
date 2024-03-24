@@ -72,11 +72,12 @@ Route::get('/home', function () {
     //  }
 
     $reviewObj = Reviews::all();
+    $sessionData = session("statusData");
     // $reviews = [];
     // Reviews::query()->delete();
     return Inertia::render('Home', [
         'reviews' => $reviewObj,
-        'status' => session("status")
+        'status' => $sessionData
     ]);
 })->name("home");
 

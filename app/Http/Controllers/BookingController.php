@@ -15,8 +15,8 @@ class BookingController extends Controller
 
     public function bookingFinal(Request $request) {
         Mail::to($request->information['email'])->send(new BookingEmail($request->information));
-        session()->flash("status", "Your request was successfully sent. We will get back to you shortly");
         session()->flash("data", "");
+        session()->flash("statusData", "Your request was successfully sent. We will get back to you shortly");
         return redirect()->route("home");
     }
 }

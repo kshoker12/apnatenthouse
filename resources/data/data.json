@@ -1,6 +1,6 @@
 {
     "header": {
-        "title": "Discover Perfection",
+        "title": "Truly Memorable",
         "titleText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.",
         "features": [
             {"name": "tents", "title": "Tents", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 3},
@@ -33,16 +33,16 @@
             {"image": "table4.png", "name": "Buffet Table", "cost": 10.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
         ]},
         {"name": "Floors", "icon": "", "items":[
-            {"image": "floor1.jpg", "name": "Wooden Dance Floor", "cost": 2.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "floor2.jpg", "name": "Click-in Dance Floor", "cost": 2.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "floor3.jpg", "name": "Turf Flooring", "cost": 0.20, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
+            {"image": "floor1.jpg", "name": "Wooden Dance Floor", "cost": 2.00, "sizes": ["9ft x 9ft", "12ft x 12ft", "15ft x 15ft"], "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
+            {"image": "floor2.jpg", "name": "Click-in Dance Floor", "cost": 2.00, "sizes":["8ft x 8ft", "12ft x 12ft", "16ft x 16ft", "Custom"], "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
+            {"image": "floor3.jpg", "name": "Turf Flooring 20ft x 14ft", "cost": 56, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
         ]},
         {"name": "Add-Ons", "icon": "", "items":[
             {"image": "floor1.jpg", "name": "Stage", "cost": 100.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
             {"image": "bars.png", "name": "LED Bar", "cost": 250.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
         ]},
         {"name": "Tents", "icon": "", "items":[
-            {"image": "tent1.jpg", "name": "Pop-up Tent", "cost": 100.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
+            {"image": "tent1.jpg", "name": "Pop-up Tent", "cost": 100.00, "sizes":["10ft x 10ft", "10ft x 20ft"],"text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
             {"image": "marqueetent.jpg", "name": "Marquee Tent", "cost": 250.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
             {"image": "tent4.jpg", "name": "Frame Tent", "cost": 250.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
         ]}

@@ -24,8 +24,8 @@ export default function BookingForm({routeData}) {
         setup: false
     });
 
-    const [totalCost, setTotalCost] = useState(routeData.totalCost);
-    const [itemsList, setItems] = useState(routeData.items)
+    const [totalCost, setTotalCost] = useState(routeData ? routeData.totalCost: 0);
+    const [itemsList, setItems] = useState(routeData ? routeData.items : [])
 
     const submit = (e) => {
         e.preventDefault();

@@ -830,3 +830,23 @@ label {
     padding-bottom: 20;
   }
 }
+
+@media screen and (min-width: 1200px){
+  .alertPop {
+    top: 100px;
+  }
+
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+  .alertPop {
+    top: 130px;
+  }
+
+}
+
+@media screen and (max-width: 991px){
+  .alertPop {
+    top: 100px;
+  }
+}
