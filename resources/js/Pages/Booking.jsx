@@ -106,8 +106,6 @@ export default function Booking({data}) {
     const [totalCost, setTotalCost] = useState(data ? data.totalCost : 0)
     const [itemList, setItemList] = useState(data ? data.items : [])
 
-    console.log(data)
-
     function findImage(category) {
         switch (category) {
             case "Chairs":
@@ -290,8 +288,8 @@ export default function Booking({data}) {
                                         onClick={()=>{
                                             if ((length + 2) * width <= 3000) {
                                                 setLength(length + 2)
-                                                setSelectedSize(length + "ft x " + width + "ft (custom)")
-                                                setSquareFeet(length * width)
+                                                setSelectedSize((length + 2) + "ft x " + width + "ft (custom)")
+                                                setSquareFeet((length + 2) * width)
                                             }
                                         }}
                                     >
@@ -304,8 +302,8 @@ export default function Booking({data}) {
                                         onClick={()=>{
                                             if (length >= 10) {
                                                 setLength(length - 2)
-                                                setSelectedSize(length + "ft x " + width + "ft (custom)")
-                                                setSquareFeet(length * width)
+                                                setSelectedSize((length - 2) + "ft x " + width + "ft (custom)")
+                                                setSquareFeet((length - 2) * width)
                                             }
                                         }}
                                     >
@@ -326,8 +324,8 @@ export default function Booking({data}) {
                                         onClick={()=>{
                                             if ((width + 1) * length <= 3000) {
                                                 setWidth(width + 1)
-                                                setSelectedSize(length + "ft x " + width + "ft (custom)")
-                                                setSquareFeet(length * width)
+                                                setSelectedSize(length + "ft x " + (width + 1) + "ft (custom)")
+                                                setSquareFeet(length * (width + 1 ))
                                             }
                                         }}
                                     >
@@ -340,8 +338,8 @@ export default function Booking({data}) {
                                         onClick={()=>{
                                             if (width >= 9) {
                                                 setWidth(width - 1)
-                                                setSelectedSize(length + "ft x " + width + "ft (custom)")
-                                                setSquareFeet(length * width)
+                                                setSelectedSize(length + "ft x " + (width - 1) + "ft (custom)")
+                                                setSquareFeet(length * (width - 1))
                                             }
                                         }}
                                     >
@@ -456,7 +454,192 @@ export default function Booking({data}) {
         )
     }
 
-    function BookingMenu({element, setQuantity, quantity, error, setError, selectedSize, setSelectedSize, cost, setCost}) {
+    function MarqueeTentMenu({quantity, setQuantity, element, error, setError, setSelectedSize, selectedSize, setCost, cost, setBreakdown}) {
+        const [length, setLength] = useState(20);
+        const [width, setWidth] = useState(10)
+        const [squareFeet, setSquareFeet] = useState(200)
+        const [custom, setCustom] = useState(false)
+
+        useEffect(()=>{
+            if (selectedSize === "Custom") {
+                setCustom(true);
+                setLength(20)
+                setWidth(10)
+                setSelectedSize(length + "ft x " + width + "ft (custom)")
+                setSquareFeet(length * width)
+            } else if (element.sizes.includes(selectedSize)) {
+                setCustom(false)
+                if (selectedSize === "20ft x 10ft") {
+                    setSquareFeet(200);
+                    setLength(20)
+                    setWidth(10)
+                } else if (selectedSize === "20ft x 20ft") {
+                    setSquareFeet(400);
+                    setLength(20)
+                    setWidth(20)
+                } else if (selectedSize === "40ft x 40ft") {
+                    setSquareFeet(1600)
+                    setLength(40);
+                    setWidth(40)
+                }
+            }
+            
+            console.log(selectedSize)
+        },[selectedSize])
+
+        useEffect(()=>{
+            let l = length / 10;
+            let w = width / 10
+            let t1 = 0;
+            let t2 = 0;
+            if (w % 2 === 1) {
+                let x = l / 2;
+                let y = (w - 1) / 2;
+                t1 = x * y;
+                t2 = x;
+            } else if (l % 2 === 1) {
+                let x = (l - 1) / 2;
+                let y = w / 2;
+                t1 = x * y;
+                t2 = y;
+            } else {
+                let x = l / 2;
+                let y = w / 2;
+                t1 = x * y;
+            }
+
+            setCost(t1 * 290 + t2 * 150)
+            setBreakdown(t2 + " x 20ft x 10ft and " + t1 + " x 20ft x 20ft")
+        },[squareFeet])
+
+        
+
+        return (
+            <>
+                <div className="tw-flex tw-w-2/3 tw-justify-center">
+                    <RadioButtonsGroup values = {element.sizes} setSize={setSelectedSize}/>
+                    
+                </div>
+                {custom ?
+                    <div className="tw-flex tw-justify-center tw-space-x-4 tw-items-center tw-w-full">
+                        <div className="tw-flex tw-items-center tw-justify-center tw-space-x-4">
+                            <div className="tw-text-3xl">
+                                Length: {length}ft
+                            </div>
+                            <div className="">
+                                <div className="tw-h-8">
+                                    <button 
+                                        className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                                        onClick={()=>{
+                                            if ((width / 10) % 2 === 0) {
+                                                if (length + 10 <= 200) {
+                                                    setLength(length + 10)
+                                                    setSquareFeet(length * width)
+                                                    setSelectedSize((length + 10) + "ft x " + width + "ft (custom)")
+                                                }
+                                            } else {
+                                                if (length + 20 <= 200) {
+                                                    setLength(length + 20)
+                                                    setSquareFeet(length * width)
+                                                    setSelectedSize((length + 20) + "ft x " + width + "ft (custom)")
+                                                }
+                                            }
+                                        }}
+                                    >
+                                        <i className="fas fa-caret-up tw-text-5xl"/>
+                                    </button>    
+                                </div>
+                                <div className="">
+                                    <button 
+                                        className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                                        onClick={()=>{
+                                            if ((width / 10) % 2 === 0) {
+                                                if (length - 10 >= 20) {
+                                                    setLength(length - 10)
+                                                    setSquareFeet(length * width)
+                                                    setSelectedSize((length - 10) + "ft x " + width + "ft (custom)")
+                                                    
+                                                }
+                                            } else {
+                                                if (length - 20 >= 20) {
+                                                    setLength(length - 20)
+                                                    setSquareFeet(length * width)
+                                                    setSelectedSize((length - 20) + "ft x " + width + "ft (custom)")
+                                                    
+                                                }
+                                            }
+                                        }}
+                                    >
+                                        <i className="fas fa-caret-down tw-text-5xl"/>
+                                    </button>    
+                                </div>
+                            </div>    
+                        </div>
+                        <div className="tw-text-3xl">x</div>
+                        <div className="tw-flex tw-justify-center tw-items-center tw-space-x-4">
+                            <div className="tw-text-3xl">
+                                Width: {width} ft   
+                            </div>
+                            <div className="">
+                                <div className="tw-h-8">
+                                    <button 
+                                        className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                                        onClick={()=>{
+                                            if ((length/10) % 2 === 0) {
+                                                if (width + 10 <= 200) {
+                                                    setWidth(width + 10)
+                                                    setSelectedSize(length + "ft x " + (width + 10) + "ft (custom)")
+                                                    setSquareFeet(length * width)
+                                                }    
+                                            } else {
+                                                if (width + 20 <= 200) {
+                                                    setWidth(width + 20)
+                                                    setSelectedSize(length + "ft x " + (width + 20) + "ft (custom)")
+                                                    setSquareFeet(length * width)
+                                                }  
+                                            }
+                                            
+                                        }}
+                                    >
+                                        <i className="fas fa-caret-up tw-text-5xl"/>
+                                    </button>    
+                                </div>
+                                <div className="">
+                                    <button 
+                                        className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
+                                        onClick={()=>{
+                                            if ((length / 10) % 2 === 0) {
+                                                if (width - 10 >= 10) {
+                                                    setWidth(width - 10)
+                                                    setSelectedSize(length + "ft x " + (width - 10) + "ft (custom)")
+                                                    setSquareFeet(length * width)
+                                                }    
+                                            } else {
+                                                if (width - 20 >= 10) {
+                                                    setWidth(width - 20)
+                                                    setSelectedSize(length + "ft x " + (width - 20) + "ft (custom)")
+                                                    setSquareFeet(length * width)
+                                                }    
+                                            }
+                                            
+                                        }}
+                                    >
+                                        <i className="fas fa-caret-down tw-text-5xl"/>
+                                    </button>    
+                                </div>
+                            </div>    
+                        </div>
+                        
+                    </div>
+                :
+                    <>
+                    </>
+                }
+            </>
+        )
+    }
+
+    function BookingMenu({element, setQuantity, quantity, error, setError, selectedSize, setSelectedSize, cost, setCost, setBreakdown}) {
         switch (products[active].name) {
             case "Chairs":
                 return <ChairsMenu element={element} setQuantity={setQuantity} quantity={quantity} error={error} setError={setError}/>
@@ -465,6 +648,8 @@ export default function Booking({data}) {
                     return <PopUpTentMenu cost = {cost} setCost={setCost} selectedSize = {selectedSize} setSelectedSize = {setSelectedSize} element = {element} setQuantity = {setQuantity} quantity = {quantity} error={error} setError={setError}/>
                 } else if (products[active].items[openIndex].name === "Frame Tent") {
                     return <FrameTentMenu cost = {cost} setCost={setCost} selectedSize = {selectedSize} setSelectedSize = {setSelectedSize} element = {element} setQuantity = {setQuantity} quantity = {quantity} error={error} setError={setError}/>
+                } else if (products[active].items[openIndex].name === "Marquee Tent") {
+                    return <MarqueeTentMenu setBreakdown = {setBreakdown} cost = {cost} setCost={setCost} selectedSize = {selectedSize} setSelectedSize = {setSelectedSize} element = {element} setQuantity = {setQuantity} quantity = {quantity} error={error} setError={setError}/>
                 }
             case "Tables":
                 return <TablesMenu element = {element} setQuantity = {setQuantity} quantity = {quantity} error={error} setError={setError}/>
@@ -493,6 +678,7 @@ export default function Booking({data}) {
         const [name, setName] = useState(activeProduct.name);
         const [selectedSize, setSelectedSize] = useState(activeProduct.sizes ? activeProduct.sizes[0]: "")
         const [cost, setCost] = useState(activeProduct.cost)
+        const [breakdown, setBreakdown] = useState(null)
 
         const handleClose = () => {
             setOpenIndex(-1);
@@ -516,7 +702,7 @@ export default function Booking({data}) {
                         <div className="tw-flex tw-justify-center tw-items-center md:tw-h-[300px] tw-h-[250px] tw-w-full">
                             <img src={activeProduct.image} className="tw-h-3/4 tw-w-auto"/>    
                         </div>    
-                        <BookingMenu cost = {cost} setCost = {setCost} selectedSize = {selectedSize} setSelectedSize = {setSelectedSize} element={activeProduct} quantity={quantity} setQuantity={setQuantity} error={error} setError={setError}/>
+                        <BookingMenu setBreakdown = {setBreakdown} cost = {cost} setCost = {setCost} selectedSize = {selectedSize} setSelectedSize = {setSelectedSize} element={activeProduct} quantity={quantity} setQuantity={setQuantity} error={error} setError={setError}/>
                     </div>
                 </DialogContent>
                 <DialogActions>
@@ -525,7 +711,8 @@ export default function Booking({data}) {
                 </Button>
                 <Button onClick={()=>{
                     if (!isNaN(quantity) && quantity >= 1) {
-                        itemList.push({name:name + " " + selectedSize,quantity:parseInt(quantity), itemIndex: openIndex, productIndex: active, cost: cost});
+                        let dataToBePushed = {breakdown: breakdown, name:name + " " + selectedSize,quantity:parseInt(quantity), itemIndex: openIndex, productIndex: active, cost: cost}
+                        itemList.push(dataToBePushed);
                         setTotalCost(totalCost + cost * quantity);handleClose()
                     } else {
                         setError("Please enter a quantity")
