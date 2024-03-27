@@ -67,6 +67,11 @@ export default function BookingForm({routeData}) {
                     </div>
                 </div>
             </header>
+            <a className='tw-bottom-0 tw-right-0 tw-p-4 tw-fixed tw-z-50' href="#header">
+                <button className='tw-rounded-full tw-bg-black tw-w-12 tw-h-12 hover:tw-bg-blue-500 tw-ease-in-out tw-duration-300'>
+                    <i className="fas fa-arrow-up  tw-text-2xl tw-text-white"/>
+                </button>
+            </a>
             <div className="tw-bg-blue-50 lg:tw-h-fit tw-flex tw-justify-between tw-items-center tw-px-20 tw-pt-20  ">
                 <form onSubmit={submit} className="tw-w-full tw-content-center tw-h-full">
                     <div className="md:tw-flex md:tw-justify-center tw-w-full tw-h-full xl:tw-space-x-20 lg:tw-space-x-10 md:tw-space-x-20 sm:space-x-0 tw-items-stretch tw-space-y-10 md:tw-space-y-0">

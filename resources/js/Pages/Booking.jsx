@@ -902,6 +902,11 @@ export default function Booking({data}) {
                     </div>
                 </div>
             </header>
+            <a className='tw-bottom-0 tw-right-0 tw-p-4 tw-fixed tw-z-50' href="#header">
+                <button className='tw-rounded-full tw-bg-black tw-w-12 tw-h-12 hover:tw-bg-blue-500 tw-ease-in-out tw-duration-300'>
+                    <i className="fas fa-arrow-up  tw-text-2xl tw-text-white"/>
+                </button>
+            </a>
             <ResponsiveDialog/>
             <div className="tw-bg-blue-50 lg:tw-h-fit md:tw-px-20 sm:tw-px-10 tw-px-2 tw-pt-6 tw-pb-10 ">
                 

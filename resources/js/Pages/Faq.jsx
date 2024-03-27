@@ -32,13 +32,18 @@ export default function Faq({}) {
                     </div>
                 </div>
             </header>
+            <a className='tw-bottom-0 tw-right-0 tw-p-4 tw-fixed tw-z-50' href="#header">
+                <button className='tw-rounded-full tw-bg-black tw-w-12 tw-h-12 hover:tw-bg-blue-500 tw-ease-in-out tw-duration-300'>
+                    <i className="fas fa-arrow-up  tw-text-2xl tw-text-white"/>
+                </button>
+            </a>
             <div className="tw-bg-blue-50 tw-py-10 ">
                 <div className="container-fluid tw-mx-24 ">
-                    <div className="tw-grid lg:tw-grid-cols-3 tw-gap-4 tw-grid-cols-2 ">
+                    <div className="tw-grid lg:tw-grid-cols-3 tw-gap-8 tw-grid-cols-2 ">
                         {questions.map((question)=>{
                             return (
-                                <a href = {"#question" + question.id} className="" >
-                                    <button className=" tw-shadow-blue-gray-500 tw-shadow-lg 2xl:tw-h-[250px]  xl:tw-h-[210px]  lg:tw-h-[200px] md:tw-h-[300px] sm:tw-h-[250px] tw-h-[220px] tw-bg-white hover:tw-bg-blue-400 hover:tw-text-white tw-ease-in-out tw-duration-200 tw-rounded-xl tw-p-4">
+                                <a href = {"#question" + question.id} className="" data-aos = "flip-left" data-aos-once = {true}>
+                                    <button className="md:tw-text-3xl tw-shadow-blue-gray-500 tw-shadow-lg 2xl:tw-h-[250px]  xl:tw-h-[210px]  lg:tw-h-[200px] md:tw-h-[300px] sm:tw-h-[250px] tw-h-[220px] tw-bg-white hover:tw-bg-blue-400 hover:tw-text-white tw-ease-in-out tw-duration-200 tw-rounded-xl tw-p-4">
                                         {question.question}    
                                     </button>
                                 </a>
@@ -53,7 +58,7 @@ export default function Faq({}) {
                             <>
                                 <div className = "tw-py-10" id = {"question" + question.id}>
                                 </div>
-                                <div className="lg:tw-flex tw-bg-white tw-shadow-sm tw-shadow-black tw-p-6" >
+                                <div className="lg:tw-flex tw-bg-white tw-shadow-sm tw-shadow-black tw-p-6" data-aos = "fade-up" data-aos-once = {true}>
                                     <div className="lg:tw-w-3/4 tw-p-4">
                                         <div className="">
                                             <h3>{question.question}</h3>
