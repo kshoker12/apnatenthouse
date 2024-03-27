@@ -20,7 +20,7 @@
                 <strong>Phone:</strong> {{$information["phone"]}}
             </div>
             <div class="">
-                <strong>Preferred Contact Method:</strong> {{$information["preferred"]}}
+                <strong>Preferred Contact Method:</strong> {{$information["preffered"]}}
             </div>
             <div class="">
                 <strong>Address:</strong> {{$information["address"]}}

@@ -8,6 +8,7 @@ import PrimaryButton from "@/Components/PrimaryButton";
 import { Card, Input, Button, Typography} from "@material-tailwind/react";
 import Checkbox from "@/Components/Checkbox";
 import { useState } from "react";
+import { useEffect } from "react";
 
 export default function BookingForm({routeData}) {
     const { data, setData, post, processing, errors, reset } = useForm({
@@ -278,7 +279,10 @@ export default function BookingForm({routeData}) {
                                             name="protection"
                                             checked = {data.protection}
                                             className="tw-block  tw-rounded-sm"
-                                            onClick={(e) => setData('protection', !data.protection)}
+                                            onClick={(e) => {
+                                                setData('protection', !data.protection);
+                                                setTotalCost(!data.protection ? totalCost * 1.1 : totalCost / 1.1)
+                                            }}
                                         />
                                         <div className="">
                                             <div className="tw-pt-1">Protection Plan</div>  
@@ -293,7 +297,10 @@ export default function BookingForm({routeData}) {
                                             name="setup"
                                             checked = {data.setup}
                                             className="tw-block tw-rounded-sm"
-                                            onClick={(e) => setData('setup', !data.setup)}
+                                            onClick={(e) => {
+                                                setData('setup', !data.setup);
+                                                setTotalCost(!data.setup ? totalCost * 1.05 : totalCost / 1.05)
+                                            }}
                                         />
                                         <div className="">
                                             <div className="tw-pt-1">Setup</div>  
