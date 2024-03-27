@@ -30,7 +30,6 @@ export default function BookingForm({routeData}) {
 
     const submit = (e) => {
         e.preventDefault();
-
         post(route('bookingFinal', {information: {
             firstname: data.firstname,
             lastname: data.lastname,
@@ -43,7 +42,7 @@ export default function BookingForm({routeData}) {
             additional: data.additional,
             protection: data.protection,
             setup: data.setup,
-            totalCost: totalCost,
+            totalCost: totalCost.toFixed(2),
             itemsList: itemsList
         }}));
     };

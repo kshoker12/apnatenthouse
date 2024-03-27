@@ -54,7 +54,7 @@
                 <ul>
                     @foreach ($information["itemsList"] as $item)
                         @if($item["breakdown"])
-                            <li>{{$item["name"]}} - Qty {{$item["quantity"]}} : Breakdown ({{$item["breakdown"]}})</li>
+                            <li>{{$item["name"]}} - Qty {{$item["quantity"]}} : Breakdown is {{$item["breakdown"]}}</li>
                         @else
                             <li>{{$item["name"]}} - Qty {{$item["quantity"]}}</li>
                         @endif

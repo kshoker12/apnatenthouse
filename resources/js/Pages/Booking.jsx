@@ -711,8 +711,14 @@ export default function Booking({data}) {
                 </Button>
                 <Button onClick={()=>{
                     if (!isNaN(quantity) && quantity >= 1) {
-                        let dataToBePushed = {breakdown: breakdown, name:name + " " + selectedSize,quantity:parseInt(quantity), itemIndex: openIndex, productIndex: active, cost: cost}
+                        let dataToBePushed = {name:name + " " + selectedSize,quantity:parseInt(quantity), itemIndex: openIndex, productIndex: active, cost: cost}
+                        if (breakdown) {
+                            dataToBePushed["breakdown"] = breakdown
+                        } else {
+                            dataToBePushed["breakdown"] = false;
+                        }
                         itemList.push(dataToBePushed);
+                        console.log(dataToBePushed)
                         setTotalCost(totalCost + cost * quantity);handleClose()
                     } else {
                         setError("Please enter a quantity")
