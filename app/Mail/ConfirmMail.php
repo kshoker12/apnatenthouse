@@ -10,30 +10,30 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class BookingEmail extends Mailable
+class ConfirmMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    private $information;
+    private $data;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($information)
+    public function __construct($data)
     {
-        $this->information = $information;
-        $this->information["protection"] = $this->information["protection"] ? "Yes" : "No";
-        $this->information["setup"] = $this->information["setup"] ? "Yes" : "No";
+        $this->data = $data;
+        $this->data["protection"] = $this->data["protection"] ? "Yes" : "No";
+        $this->data["setup"] = $this->data["setup"] ? "Yes" : "No";
     }
 
-    /**
+      /**
      * Get the message envelope.
      */
     public function envelope(): Envelope
     {
         return new Envelope(
-            from: new Address('skabgaming101@gmail.com', 'Apnatenthouse Helper'),
-            subject: "Booking Request"
+            from: new Address('skabgaming101@gmail.com', 'Apnatenthouse'),
+            subject: "Booking Confirmation"
         );
     }
 
@@ -43,12 +43,13 @@ class BookingEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.booking',
+            view: 'mail.confirm',
             with: [
-                'information' => $this->information
+                'information' => $this->data
             ]
         );
     }
+
 
     /**
      * Get the attachments for the message.

@@ -1,4 +1,4 @@
-import tentImg from "../../../public/tent1.jpg"
+import tentImg from "./tent.png"
 import chairImg from "./chair.png"
 import tablesImg from "./tables.png"
 import floorsImg from "./floors.png";

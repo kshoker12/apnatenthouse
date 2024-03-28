@@ -47,6 +47,12 @@ export default function BookingForm({routeData}) {
         }}));
     };
 
+    window.addEventListener("popstate", function() {
+        // window.history.replaceState(null, "", route("home"))
+        let requestData = {items: itemsList, totalCost: totalCost}
+        post(route("bookingBack",{data: requestData}))
+    })
+
     return (
         <NavBar>
             <Head title="Booking-Form">
@@ -320,6 +326,7 @@ export default function BookingForm({routeData}) {
                                         id="additional"
                                         type="textarea"
                                         name="additional"
+                                        placeholder="Is there anything you'd like us to know?"
                                         value={data.additional}
                                         className="tw-block xl:tw-w-96 md:tw-w-80 tw-h-64 lg:tw-w-72 sm:tw-w-64 tw-w-96 tw-border-gray-600 focus:tw-border-indigo-500 focus:tw-ring-indigo-500 tw-rounded-md tw-shadow-sm tw-text-xl"
                                         autoComplete="additional"
@@ -347,7 +354,7 @@ export default function BookingForm({routeData}) {
                                 })}    
                             </ul>
                             <div className="tw-px-6 tw-py-4">
-                                <h4 className=""><strong>Estimated Cost:</strong> ${totalCost.toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2})}</h4>
+                                <h4 className=""><strong>Estimated Cost:</strong> ${totalCost.toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2, maximumFractionDigits:2})}</h4>
                             </div>
                         </div>
                         

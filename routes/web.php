@@ -133,6 +133,8 @@ Route::post('/booking-submit', [BookingController::class, 'bookingRequest'])->na
 
 Route::post("/booking-final", [BookingController::class, 'bookingFinal'])->name('bookingFinal');
 
+Route::post("/booking-back", [BookingController::class, 'bookingBack'])->name('bookingBack');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

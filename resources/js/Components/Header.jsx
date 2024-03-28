@@ -15,7 +15,7 @@ export default function Header({ props, status }) {
                         
                     <div className="col-md-8 col-md-offset-2 intro-text" >
                   {show &&
-                    <div className="tw-z-50 tw-absolute alertPop tw-flex tw-justify-center tw-w-full">
+                    <div className="tw-z-50 tw-absolute alertPop tw-flex tw-justify-center tw-w-11/12">
                         <Alert severity="success">
                             <div className="tw-flex tw-space-x-4 md:tw-mt-0 tw-mt-1 tw-items-center tw-justify-center">
                                 <div className="md:tw-text-2xl sm:tw-text-lg ">

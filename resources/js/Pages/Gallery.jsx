@@ -5,6 +5,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import jsonData from "../../data/data.json";
 
 
 export default function Gallery({}) {
@@ -56,7 +57,7 @@ function MasonryImageList() {
   return (
     <Box sx={{ width: '100%', height:"100%"}}>
       <ImageList variant="masonry" cols={3} gap={8} sx={{overflow:"hidden"}}>
-        {itemData.map((item) => (
+        {jsonData.gallery.map((item) => (
           <ImageListItem key={item.img}
           data-aos = "flip-left" data-aos-once = {true}>
             <img

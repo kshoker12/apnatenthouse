@@ -10,6 +10,12 @@
     </head>
     <body class="font-sans antialiased">
         <div class="">
+            Hi {{$information['firstname']}} {{$information['lastname']}}, your booking request has been recieved and we will get back to you as soon as possible. 
+        </div>
+        <br>
+        <div class="">
+            <div><h4>Booking Information</h4></div>
+            <div class="">
             <div class="">
                 <strong>Name:</strong> {{$information['firstname']}} {{$information['lastname']}}
             </div>
@@ -45,6 +51,7 @@
             </div>
         </div>
         <br>
+        <br>
         <div class="">
             <div class="">
                 <h5>Items</h5>    
@@ -52,14 +59,11 @@
             <div class="">
                 <ul>
                     @foreach ($information["itemsList"] as $item)
-                        @if($item["breakdown"])
-                            <li>{{$item["name"]}} - Qty {{$item["quantity"]}} : Breakdown is {{$item["breakdown"]}}</li>
-                        @else
-                            <li>{{$item["name"]}} - Qty {{$item["quantity"]}}</li>
-                        @endif
+                        <li>{{$item["name"]}} - Qty {{$item["quantity"]}}</li>
                     @endforeach
                 </ul>
             </div>
+        </div>
         </div>
     </body>
 </html>

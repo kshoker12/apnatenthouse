@@ -19,6 +19,104 @@
             "Attention to Detail", "Excellent Customer Service", "Wide Range of Options"
         ]
     },
+    "gallery": [
+        {
+            "img": "gallery1.JPG",
+            "title": "g1"
+        },
+        {
+            "img": "gallery2.JPG",
+            "title": "g2"
+        },
+        {
+            "img": "gallery3.JPG",
+            "title": "g3"
+        },
+        {
+            "img": "gallery4.JPG",
+            "title": "g4"
+        },
+        {
+            "img": "gallery5.JPG",
+            "title": "g5"
+        },
+        {
+            "img": "gallery6.JPG",
+            "title": "g6"
+        },
+        {
+            "img": "gallery7.JPG",
+            "title": "g7"
+        },
+        {
+            "img": "gallery8.JPG",
+            "title": "g8"
+        },
+        {
+            "img": "gallery9.JPG",
+            "title": "g9"
+        },
+        {
+            "img": "gallery10.JPG",
+            "title": "g10"
+        },
+        {
+            "img": "gallery11.JPG",
+            "title": "g11"
+        },
+        {
+            "img": "gallery12.JPG",
+            "title": "g12"
+        },
+        {
+            "img": "gallery13.JPG",
+            "title": "g13"
+        },
+        {
+            "img": "gallery14.JPG",
+            "title": "g14"
+        },
+        {
+            "img": "gallery15.JPG",
+            "title": "g15"
+        },
+        {
+            "img": "gallery16.JPG",
+            "title": "g16"
+        },
+        {
+            "img": "gallery17.JPG",
+            "title": "g17"
+        },
+        {
+            "img": "gallery18.JPG",
+            "title": "g18"
+        },
+        {
+            "img": "gallery19.JPG",
+            "title": "g19"
+        },
+        {
+            "img": "gallery20.JPG",
+            "title": "g20"
+        },
+        {
+            "img": "gallery21.JPG",
+            "title": "g21"
+        },
+        {
+            "img": "gallery22.JPG",
+            "title": "g22"
+        },
+        {
+            "img": "gallery23.JPG",
+            "title": "g23"
+        },
+        {
+            "img": "gallery24.JPG",
+            "title": "g24"
+        }
+    ],
     "faq": [
         {"id": 0, "question": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates delectus, quisquam voluptas deleniti ipsum at?", "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vero deserunt incidunt amet aut, animi doloribus officia ducimus laudantium obcaecati harum ex facilis molestias, similique magni dignissimos, temporibus rerum ratione? Similique non suscipit totam natus explicabo, impedit voluptatem sit aperiam quam incidunt ut a repellat illum enim minus aliquam saepe placeat blanditiis ab voluptas repellendus ex sunt! Velit, temporibus sed.", "image": "frametent.jpg"},
         {"id": 1, "question": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates delectus, quisquam voluptas deleniti ipsum at?", "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vero deserunt incidunt amet aut, animi doloribus officia ducimus laudantium obcaecati harum ex facilis molestias, similique magni dignissimos, temporibus rerum ratione? Similique non suscipit totam natus explicabo, impedit voluptatem sit aperiam quam incidunt ut a repellat illum enim minus aliquam saepe placeat blanditiis ab voluptas repellendus ex sunt! Velit, temporibus sed.", "image": "frametent.jpg"},
@@ -29,7 +127,7 @@
     ],
     "products": [
         {"name": "Chairs", "icon": "fas fa-chair", "items":[
-            {"image": "chair4.jpg", "name": "Chiavari Chair", "cost": 8.00, "text": "Chiavari chairs, known for their elegance, feature slender, curved frames typically crafted from high-quality wood like beech or mahogany, making them a timeless seating option for upscale events such as weddings and formal dinners, adding sophistication and charm to any venue."},
+            {"image": "chair4.jpg", "name": "Chiavari Chair", "cost": 8.00, "text": "Chiavari chairs, known for their elegance, feature slender, curved frames typically crafted from high-quality wood like beech or mahogany, making them a timeless seating option for upscale events, adding sophistication and charm to any venue."},
             {"image": "chair2.jpg", "name": "Plain Chair", "cost": 2.00, "text": "A plain white chair features a sturdy metal frame with a plastic back and seat, offering a versatile and timeless aesthetic suitable for various events such as birthday parties, weddings, and exhibitions."},
             {"image": "chair3.jpg", "name": "Garden Padded Chair", "cost": 4.00, "text": "Our garden padded chairs combine comfort and style with a sturdy metal frame and padded seats, perfect for outdoor events like weddings and garden parties, offering both durability and elegance amidst natural surroundings."},
             {"image": "chair5.jpg", "name": "Fan Back Chair", "cost": 2.00, "text": "A fanback chair boasts a unique curved backrest design for ergonomic comfort, constructed from durable materials like resin or plastic, ideal for both indoor and outdoor events, blending style with practicality effortlessly."}
@@ -48,7 +146,7 @@
             {"image": "floor3.jpg", "name": "Turf Flooring 12ft x 20ft", "cost": 56, "text": "A turf floor is synthetic grass flooring for outdoor events, offering a natural look and easy installation, perfect for weddings, festivals, and other outdoor occasions."}
         ]},
         {"name": "Add-Ons", "icon": "", "items":[
-            {"image": "floor1.jpg", "name": "Stage", "cost": 100.00, "text": "A click-in stage is a portable and tool-free assembly system with interlocking panels, providing a sturdy platform for performances and events indoors or outdoors."},
+            {"image": "floor1.jpg", "name": "Stage 4ft x 4ft", "cost": 100.00, "text": "A click-in stage is a portable and tool-free assembly system with interlocking panels, providing a sturdy platform for performances and events indoors or outdoors."},
             {"image": "bars.png", "name": "LED Bar", "cost": 250.00, "text": "An LED bar is a modern, illuminated serving counter for beverages at events, featuring customizable lighting effects for ambiance enhancement."}
         ]},
         {"name": "Tents", "icon": "", "items":[
