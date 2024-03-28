@@ -1,17 +1,17 @@
 {
     "header": {
         "title": "Truly Memorable",
-        "titleText": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.",
+        "titleText": "Welcome to Apna Tent House! From elegant tents and stylish tables to comfy chairs and stunning stages, we've got you covered. Get ready to elevate your celebration to the next level with our top-notch rental services. Your dream event starts here!",
         "features": [
-            {"name": "tents", "title": "Tents", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 3},
-            {"name": "chairs", "title": "Chairs", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 4},
-            {"name": "tables", "title": "Tables", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 4},
-            {"name": "floors", "title": "Floors", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 3},
-            {"name": "addons", "title": "Add-ons", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error.", "products": 2}
+            {"name": "tents", "title": "Tents", "text": "Get ready to elevate your event with our rental tents. Experience the perfect blend of style and professionalism.", "products": 3},
+            {"name": "chairs", "title": "Chairs", "text": "Take a seat in style with our elegant chairs and enhance the sophistication and comfort.", "products": 4},
+            {"name": "tables", "title": "Tables", "text": "Gather around in style with our sleek tables and create a memorable evening with our elegant and versatile options.", "products": 4},
+            {"name": "floors", "title": "Floors", "text": "Dance the night away on our stylish flooring options.", "products": 3},
+            {"name": "addons", "title": "Add-ons", "text": "We've got you covered with our fantastic add-ons to take your event to the next level.", "products": 2}
         ]
     },
     "aboutus": {
-        "main": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore, alias eaque delectus quam voluptate facere veritatis aperiam quae sequi qui tenetur ipsam doloremque, maxime nostrum quos praesentium quas suscipit! Natus voluptatem vero laboriosam sapiente, earum, dolorem eveniet corrupti cum quod facilis harum? Ipsum in qui recusandae porro dicta, tempore rerum.",
+        "main": "At Apna Tent House, we prioritize customer appreciation and offer top-notch service, quality tents, and competitive pricing. Whether it's a wedding, birthday, or corporate gathering, we ensure your event is unforgettable with our elegant marquees and sturdy A Frames. We source only the finest tents and accessories, and genuinely care about making your celebration truly memorable. Contact us today!",
         "why": [
             "Family-Owned and Customer-Centric", "Unmatched Quality and Reliability", "Competitive Pricing", "Experience and Expertise"
         ],
@@ -29,30 +29,32 @@
     ],
     "products": [
         {"name": "Chairs", "icon": "fas fa-chair", "items":[
-            {"image": "chair2.jpg", "name": "Plain Chair", "cost": 2.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "chair3.jpg", "name": "Garden Padded Chair", "cost": 4.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "chair5.jpg", "name": "Fan Back Chair", "cost": 2.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "chair4.jpg", "name": "Chiavari Chair", "cost": 8.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
+            {"image": "chair4.jpg", "name": "Chiavari Chair", "cost": 8.00, "text": "Chiavari chairs, known for their elegance, feature slender, curved frames typically crafted from high-quality wood like beech or mahogany, making them a timeless seating option for upscale events such as weddings and formal dinners, adding sophistication and charm to any venue."},
+            {"image": "chair2.jpg", "name": "Plain Chair", "cost": 2.00, "text": "A plain white chair features a sturdy metal frame with a plastic back and seat, offering a versatile and timeless aesthetic suitable for various events such as birthday parties, weddings, and exhibitions."},
+            {"image": "chair3.jpg", "name": "Garden Padded Chair", "cost": 4.00, "text": "Our garden padded chairs combine comfort and style with a sturdy metal frame and padded seats, perfect for outdoor events like weddings and garden parties, offering both durability and elegance amidst natural surroundings."},
+            {"image": "chair5.jpg", "name": "Fan Back Chair", "cost": 2.00, "text": "A fanback chair boasts a unique curved backrest design for ergonomic comfort, constructed from durable materials like resin or plastic, ideal for both indoor and outdoor events, blending style with practicality effortlessly."}
         ]},
         {"name": "Tables", "icon": "", "items":[
-            {"image": "table1.png", "name": "Cocktail Table", "cost": 10.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "table2.png", "name": "Round Table", "cost": 10.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "table3.png", "name": "Rectangle Table", "cost": 8.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "table4.png", "name": "Buffet Table", "cost": 10.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
+            {"image": "table2.png", "name": "Round Table", "cost": 10.00, "text": "White round tables provide versatile and sleek surfaces for events, offering ample space and a modern aesthetic for dining, meetings, or displays at weddings, corporate functions, or social gatherings."},
+            
+            {"image": "table3.png", "name": "Rectangle Table", "cost": 8.00, "text": "Rectangle tables provide ample and versatile surfaces for various events, offering practicality and a classic aesthetic, ideal for dining, meetings, or displays at weddings, corporate functions, or social gatherings."},
+            {"image": "table4.png", "name": "Buffet Table", "cost": 10.00, "text": "A buffet table is a long surface for serving food and drinks, designed with multiple levels or shelves for easy access, ideal for self-service dining at events like parties or receptions."},
+            {"image": "table1.png", "name": "Cocktail Table", "cost": 10.00, "text": "A cocktail table is a tall, slender table for serving drinks and snacks at events, encouraging standing or casual mingling, ideal for cocktail parties and social gatherings."}
+            
         ]},
         {"name": "Floors", "icon": "", "items":[
-            {"image": "floor1.jpg", "name": "Wooden Dance Floor", "cost": 2.00, "sizes": ["9ft x 9ft", "12ft x 12ft", "15ft x 15ft"], "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "floor2.jpg", "name": "Click-in Dance Floor", "cost": 2.00, "sizes":["8ft x 8ft", "12ft x 12ft", "16ft x 16ft", "Custom"], "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "floor3.jpg", "name": "Turf Flooring 20ft x 14ft", "cost": 56, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
+            {"image": "floor1.jpg", "name": "Wooden Dance Floor", "cost": 2.00, "sizes": ["9ft x 9ft", "12ft x 12ft", "15ft x 15ft"], "text": "A wooden dance floor offers a stylish and sturdy surface for dancing at events, enhancing weddings, parties, and celebrations with its elegance and durability."},
+            {"image": "floor2.jpg", "name": "Click-in Dance Floor", "cost": 2.00, "sizes":["8ft x 8ft", "12ft x 12ft", "16ft x 16ft", "Custom"], "text": "A click-in dance floor is a portable and easy-to-assemble flooring solution for events, with interlocking panels that require no tools or adhesives, providing a stable surface for dancing at weddings, parties, and gatherings."},
+            {"image": "floor3.jpg", "name": "Turf Flooring 12ft x 20ft", "cost": 56, "text": "A turf floor is synthetic grass flooring for outdoor events, offering a natural look and easy installation, perfect for weddings, festivals, and other outdoor occasions."}
         ]},
         {"name": "Add-Ons", "icon": "", "items":[
-            {"image": "floor1.jpg", "name": "Stage", "cost": 100.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "bars.png", "name": "LED Bar", "cost": 250.00, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
+            {"image": "floor1.jpg", "name": "Stage", "cost": 100.00, "text": "A click-in stage is a portable and tool-free assembly system with interlocking panels, providing a sturdy platform for performances and events indoors or outdoors."},
+            {"image": "bars.png", "name": "LED Bar", "cost": 250.00, "text": "An LED bar is a modern, illuminated serving counter for beverages at events, featuring customizable lighting effects for ambiance enhancement."}
         ]},
         {"name": "Tents", "icon": "", "items":[
-            {"image": "tent1.jpg", "name": "Pop-up Tent", "cost": 100.00, "sizes":["10ft x 10ft", "10ft x 20ft"],"text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "marqueetent.jpg", "name": "Marquee Tent", "cost": 150.00, "sizes": ["10ft x 20ft", "20ft x 20ft", "40ft x 40ft", "Custom"], "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."},
-            {"image": "tent4.jpg", "name": "Frame Tent", "cost": 1.50, "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta corporis, est vel aliquam sunt fugit repellendus hic rerum error."}
+            {"image": "tent1.jpg", "name": "Pop-up Tent", "cost": 100.00, "sizes":["10ft x 10ft", "10ft x 20ft"],"text": "A pop-up tent provides instant shelter with easy setup, ideal for outdoor events, featuring ventilation and waterproofing for convenience and comfort."},
+            {"image": "marqueetent.jpg", "name": "Marquee Tent", "cost": 150.00, "sizes": ["10ft x 20ft", "20ft x 20ft", "40ft x 40ft", "Custom"], "text": "A marquee tent, renowned for its elegance and versatility, offers grand and spacious shelter, ensuring unforgettable experiences for weddings, extravagant parties, and prestigious corporate functions."},
+            {"image": "tent4.jpg", "name": "Frame Tent", "cost": 1.50, "text": "A frame tent, supported by a rigid framework and lacking center poles, offers versatile and unobstructed shelter for events like weddings and exhibitions, accommodating various layouts and configurations."}
         ]}
     ]
 }

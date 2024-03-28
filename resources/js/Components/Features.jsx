@@ -1,4 +1,4 @@
-import tentImg from "./tent.png"
+import tentImg from "../../../public/tent1.jpg"
 import chairImg from "./chair.png"
 import tablesImg from "./tables.png"
 import floorsImg from "./floors.png";
@@ -33,7 +33,7 @@ export default function Features({ props }) {
                     ? props.features.map((feature, i) => {
                         return (
                             <a href = {feature.name} className="">
-                                <div className=" tw-bg-white hover:tw-bg-blue-100 tw-ease-in-out tw-duration-200 tw-shadow-lg tw-float-left 2xl:tw-w-[19.8%] xl:tw-w-[24.7%] lg:tw-w-[33%] sm:tw-w-[49.5%] tw-m-0.5"><
+                                <div className=" tw-bg-white hover:tw-bg-blue-100 tw-ease-in-out tw-duration-200 tw-shadow-lg tw-float-left 2xl:tw-w-[19.8%] xl:tw-w-[24.7%] lg:tw-w-[33%] sm:tw-w-[49.5%] tw-m-0.5 tw-h-[400px]"><
                                     h3>
                                         {feature.title}
                                     </h3>

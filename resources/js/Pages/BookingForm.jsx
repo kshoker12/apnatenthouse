@@ -269,7 +269,7 @@ export default function BookingForm({routeData}) {
                             <div className="tw-flex tw-justify-center tw-items-center">
                                 <div className="tw-w-fit">
                                     <div className="xl:tw-w-96 lg:tw-w-72 md:tw-w-80 sm:tw-w-64 tw-w-96">
-                                        <InputLabel htmlFor="protection" value="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam voluptates libero ad harum vero sint magni beatae officia et numquam!" />    
+                                        <InputLabel htmlFor="protection" value="With a 10% fee, protection plan covers the cost of any minor damages. With a 5% setup fee, our team handles the setup and dismantling of equipment" />    
                                     </div>
                                     <div className="tw-flex tw-items-center tw-space-x-2 xl:tw-w-96 lg:tw-w-72 md:tw-w-96 sm:tw-w-64 tw-w-96">
                                         

@@ -96,9 +96,9 @@ export default function Footer({}) {
                 <div className="tw-mt-12 tw-flex tw-w-full tw-flex-col tw-items-center tw-justify-center tw-border-t tw-border-blue-gray-50 tw-py-4 md:tw-flex-row md:tw-justify-between">
                 <Typography
                     variant="small"
-                    className="tw-mb-4 tw-text-center tw-font-normal tw-text-blue-gray-900 tw-md:mb-0"
+                    className="tw-mb-4 tw-text-center tw-font-normal tw-text-white tw-md:mb-0"
                 >
-                    &copy; {2024} Apna Tent House. All
+                    &copy; {2024} Apna Tent House, UL Group of Companies. All
                     Rights Reserved.
                 </Typography>
                 </div>
