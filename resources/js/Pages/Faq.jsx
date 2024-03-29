@@ -43,7 +43,7 @@ export default function Faq({}) {
                         {questions.map((question)=>{
                             return (
                                 <a href = {"#question" + question.id} className="" data-aos = "flip-left" data-aos-once = {true}>
-                                    <button className="md:tw-text-3xl tw-shadow-blue-gray-500 tw-shadow-lg 2xl:tw-h-[250px]  xl:tw-h-[210px]  lg:tw-h-[200px] md:tw-h-[300px] sm:tw-h-[250px] tw-h-[220px] tw-bg-white hover:tw-bg-blue-400 hover:tw-text-white tw-ease-in-out tw-duration-200 tw-rounded-xl tw-p-4">
+                                    <button className="md:tw-text-3xl tw-w-full tw-shadow-blue-gray-500 tw-shadow-lg 2xl:tw-h-[250px]  xl:tw-h-[210px]  lg:tw-h-[200px] md:tw-h-[300px] sm:tw-h-[250px] tw-h-[220px] tw-bg-white hover:tw-bg-blue-400 hover:tw-text-white tw-ease-in-out tw-duration-200 tw-rounded-xl tw-p-4">
                                         {question.question}    
                                     </button>
                                 </a>

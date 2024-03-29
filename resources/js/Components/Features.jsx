@@ -33,7 +33,7 @@ export default function Features({ props }) {
                     ? props.features.map((feature, i) => {
                         return (
                             <a href = {feature.name} className="">
-                                <div className=" tw-bg-white hover:tw-bg-blue-100 tw-ease-in-out tw-duration-200 tw-shadow-lg tw-float-left 2xl:tw-w-[19.8%] xl:tw-w-[24.7%] lg:tw-w-[33%] sm:tw-w-[49.5%] tw-m-0.5 tw-h-[400px]"><
+                                <div className=" tw-bg-white hover:tw-bg-blue-100 tw-ease-in-out tw-duration-200 tw-shadow-lg tw-float-left 2xl:tw-w-[19.8%] xl:tw-w-[24.7%] lg:tw-w-[33%] sm:tw-w-[49.5%] tw-m-0.5 tw-h-[400px] tw-w-full"><
                                     h3>
                                         {feature.title}
                                     </h3>

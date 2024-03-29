@@ -33,7 +33,7 @@
             "title": "g3"
         },
         {
-            "img": "gallery4.JPG",
+            "img": "gallery4.jpg",
             "title": "g4"
         },
         {
@@ -45,7 +45,7 @@
             "title": "g6"
         },
         {
-            "img": "gallery7.JPG",
+            "img": "gallery7.jpg",
             "title": "g7"
         },
         {
@@ -73,23 +73,23 @@
             "title": "g13"
         },
         {
-            "img": "gallery14.JPG",
+            "img": "gallery14.jpg",
             "title": "g14"
         },
         {
-            "img": "gallery15.JPG",
+            "img": "gallery15.jpg",
             "title": "g15"
         },
         {
-            "img": "gallery16.JPG",
+            "img": "gallery16.jpg",
             "title": "g16"
         },
         {
-            "img": "gallery17.JPG",
+            "img": "gallery17.jpg",
             "title": "g17"
         },
         {
-            "img": "gallery18.JPG",
+            "img": "gallery18.jpg",
             "title": "g18"
         },
         {
@@ -101,15 +101,15 @@
             "title": "g20"
         },
         {
-            "img": "gallery21.JPG",
+            "img": "gallery21.jpg",
             "title": "g21"
         },
         {
-            "img": "gallery22.JPG",
+            "img": "gallery22.jpg",
             "title": "g22"
         },
         {
-            "img": "gallery23.JPG",
+            "img": "gallery23.jpg",
             "title": "g23"
         },
         {
@@ -118,12 +118,14 @@
         }
     ],
     "faq": [
-        {"id": 0, "question": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates delectus, quisquam voluptas deleniti ipsum at?", "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vero deserunt incidunt amet aut, animi doloribus officia ducimus laudantium obcaecati harum ex facilis molestias, similique magni dignissimos, temporibus rerum ratione? Similique non suscipit totam natus explicabo, impedit voluptatem sit aperiam quam incidunt ut a repellat illum enim minus aliquam saepe placeat blanditiis ab voluptas repellendus ex sunt! Velit, temporibus sed.", "image": "frametent.jpg"},
-        {"id": 1, "question": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates delectus, quisquam voluptas deleniti ipsum at?", "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vero deserunt incidunt amet aut, animi doloribus officia ducimus laudantium obcaecati harum ex facilis molestias, similique magni dignissimos, temporibus rerum ratione? Similique non suscipit totam natus explicabo, impedit voluptatem sit aperiam quam incidunt ut a repellat illum enim minus aliquam saepe placeat blanditiis ab voluptas repellendus ex sunt! Velit, temporibus sed.", "image": "frametent.jpg"},
-        {"id": 2, "question": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates delectus, quisquam voluptas deleniti ipsum at?", "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vero deserunt incidunt amet aut, animi doloribus officia ducimus laudantium obcaecati harum ex facilis molestias, similique magni dignissimos, temporibus rerum ratione? Similique non suscipit totam natus explicabo, impedit voluptatem sit aperiam quam incidunt ut a repellat illum enim minus aliquam saepe placeat blanditiis ab voluptas repellendus ex sunt! Velit, temporibus sed.", "image": "frametent.jpg"},
-        {"id": 3, "question": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates delectus, quisquam voluptas deleniti ipsum at?", "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vero deserunt incidunt amet aut, animi doloribus officia ducimus laudantium obcaecati harum ex facilis molestias, similique magni dignissimos, temporibus rerum ratione? Similique non suscipit totam natus explicabo, impedit voluptatem sit aperiam quam incidunt ut a repellat illum enim minus aliquam saepe placeat blanditiis ab voluptas repellendus ex sunt! Velit, temporibus sed.", "image": "frametent.jpg"},
-        {"id": 4, "question": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates delectus, quisquam voluptas deleniti ipsum at?", "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vero deserunt incidunt amet aut, animi doloribus officia ducimus laudantium obcaecati harum ex facilis molestias, similique magni dignissimos, temporibus rerum ratione? Similique non suscipit totam natus explicabo, impedit voluptatem sit aperiam quam incidunt ut a repellat illum enim minus aliquam saepe placeat blanditiis ab voluptas repellendus ex sunt! Velit, temporibus sed.", "image": "frametent.jpg"},
-        {"id": 5, "question": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates delectus, quisquam voluptas deleniti ipsum at?", "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet vero deserunt incidunt amet aut, animi doloribus officia ducimus laudantium obcaecati harum ex facilis molestias, similique magni dignissimos, temporibus rerum ratione? Similique non suscipit totam natus explicabo, impedit voluptatem sit aperiam quam incidunt ut a repellat illum enim minus aliquam saepe placeat blanditiis ab voluptas repellendus ex sunt! Velit, temporibus sed.", "image": "frametent.jpg"}
+        {"id": 0, "question": "What is the Customers responsibilities?", "answer": "The customer's responsibility is to make sure all the items rented are brought back in the same shape it was taken. The linen on the tables should be shaken off and placed back how they were provided.", "image": "frametent.jpg"},
+        {"id": 1, "question": "Do we set up the tables and chairs?", "answer": "Apna Tent House and Party Rentals set up tents, stages, dance floors, and large equipment. There is an additional fee for set up tables, chairs, linen, etc. The customer must inform 48 hours in advance if setup is required from Apna Tent House. Otherwise, items will be stacked and placed in neat order for them to set up. If the customer is asked to have the items placed the same way as delivered or otherwise, we will charge an additional fee to pick them up.", "image": "frametent.jpg"},
+        {"id": 2, "question": "Do we charge delivery or pick-up fees?", "answer": "Delivery is available to all of our customers for an additional cost. The delivery charges are based on location and are delivered during the office hours of 8:00 am to 7:00 pm. These charges are for door-to-door service with access for the delivery driver to drop off. ", "image": "frametent.jpg"},
+        {"id": 3, "question": "Do I need a tent permit for the booking?", "answer": "The tent permit is solely the customer's responsibility. Apna Tent House doesn’t provide any tent permits. We can provide the information regarding the tent to help with the process.", "image": "frametent.jpg"},
+        {"id": 4, "question": "What should the customer do before we arrive?", "answer": "The customers should have all the furniture, patio furniture, etc removed before arrival at Apna Tent House. The customer should make sure to have the lawn mowed and have the site cleared for proper setup. The customer should have a spot available for the delivery truck to park and set up.", "image": "frametent.jpg"},
+        {"id": 5, "question": "When and how do you pay?", "answer": "Apna Tent House requires a 50% deposit to confirm the booking. 20% of the deposit is non-refundable. The remaining balance will be collected a full week prior to the event. Any cancellation must be told 14 business days before to receive any deposit back. Any cancellations less than 14 business will result in no deposit being returned. We receive payment in cash, cheque or e-transfer.", "image": "frametent.jpg"},
+        {"id": 6, "question": "How does the quotation work?", "answer":"All pricing provided by Apna Tent House is valid for 3 days any inquiries for pricing after the 3 days will require a new quotation. All items are charged regardless if the item is used or not. Any cancellation must be told 14 business days before receiving any deposit back. Any cancellations less than 14 business will result in no deposit being returned. We receive payment in cash, cheque, or e-transfer.", "image": "frametent.jpg"},
+        {"id": 7, "question": "How do we know what size tent we need and what options we have?", "answer": "The customer should have the length and width where they would need a tent for a quotation. An Apna Tent House employee can provide a quote for the different options we carry for the size required.","image": "frametent.jpg"}
     ],
     "products": [
         {"name": "Chairs", "icon": "fas fa-chair", "items":[
