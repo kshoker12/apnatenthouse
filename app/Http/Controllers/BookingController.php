@@ -16,7 +16,7 @@ class BookingController extends Controller
     }
 
     public function bookingFinal(Request $request) {
-        // Mail::to("apnatentandpartyrentals@gmail.com")->send(new BookingEmail($request->information));
+        Mail::to("apnatentandpartyrentals@gmail.com")->send(new BookingEmail($request->information));
         Mail::to("karandeep.shoker@outlook.com")->send(new BookingEmail($request->information));
         Mail::to($request->information['email'])->send(new ConfirmMail($request->information));
         session()->flash("data", "");
