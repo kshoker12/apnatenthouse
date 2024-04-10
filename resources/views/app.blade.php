@@ -16,17 +16,16 @@
         @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])
         @inertiaHead
         <!-- Google tag (gtag.js) -->
-        <script async 
-            src = "https://www.googletagmanager.com/gtag/js?id=X5Y8HFM7DJ">
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-X5Y8HFM7DJ">
         </script>
         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Data());
-            gtag('config', 'G-X5Y8HFM7DJ');
-        </script/>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-X5Y8HFM7DJ');
+        </script>
+
     </head>
     <body class="font-sans antialiased">
         @inertia
