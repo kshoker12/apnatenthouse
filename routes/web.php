@@ -60,15 +60,6 @@ Route::get('/home', function () {
     //     $revModel->userreviews = property_exists($review->user, "reviews") ? $review->user->reviews: -1;
     //     $revModel->userthumbnail = $review->user->thumbnail;
     //     $revModel->save();
-    //     // DB::table('reviews')->where('id', $revModel->id)->update(['date' => DB::raw('?')],[$review->date]);
-    //     // DB::table('reviews')->where('id', $revModel->id)->update(['link' => DB::raw('?')],[$review->link]);
-    //     // DB::table('reviews')->where('id', $revModel->id)->update(['rating' => DB::raw('?')],[$review->rating]);
-    //     // DB::table('reviews')->where('id', $revModel->id)->update(['review_id' => DB::raw('?')],[$review->review_id]);
-    //     // // DB::table('reviews')->where('id', $revModel->id)->update(['snippet' => DB::raw('?')],[$review->snippet]);
-    //     // DB::table('reviews')->where('id', $revModel->id)->update(['username' => DB::raw('?')],[$review->user->name]);
-    //     // DB::table('reviews')->where('id', $revModel->id)->update(['userlink' => DB::raw('?')],[$review->user->link]);
-    //     // // DB::table('reviews')->where('id', $revModel->id)->update(['userreviews' => DB::raw('?')],[$review->user->reviews]);
-    //     // DB::table('reviews')->where('id', $revModel->id)->update(['userthumbnail' => DB::raw('?')],[$review->user->thumbnail]);
     //  }
 
     $reviewObj = Reviews::all();
@@ -84,6 +75,53 @@ Route::get('/home', function () {
 Route::get('/tents', function () {
     return Inertia::render('Tents');
 })->name('tents');
+
+Route::get("/update/{passcode}", function($passcode) {
+    if ($passcode === "Angad1234$") {
+        $reviews = [];
+        Reviews::query()->delete();    
+
+        $query = [
+            'engine' => 'google_maps_reviews',
+            'place_id' => 'ChIJeRASX2PZhVQRj-sAXkL1YqU'
+        ]; 
+
+        $search = new GoogleSearchResults('dfae333e4f42d27ef6b36a190040cd2dc8426f5b8dace99657db79d0cb15cda0');
+        $result = $search->get_json($query);
+        $reviews = $result->reviews;
+        $pagination = $result->serpapi_pagination;
+        while ($pagination) {
+            $query = [
+                'engine' => 'google_maps_reviews',
+                'place_id' => 'ChIJeRASX2PZhVQRj-sAXkL1YqU',
+                'next_page_token' => $pagination->next_page_token
+            ]; 
+
+            $search = new GoogleSearchResults('dfae333e4f42d27ef6b36a190040cd2dc8426f5b8dace99657db79d0cb15cda0');
+            $result = $search->get_json($query);
+
+            $reviews = array_merge($reviews, $result->reviews);
+            $pagination = property_exists( $result,'serpapi_pagination') ? $result->serpapi_pagination: NULL;
+        }
+
+        collect($reviews)->dump();
+        foreach($reviews as $review) {
+            $revModel = new Reviews;
+            $revModel->date = $review->date;
+            $revModel->link = $review->link;
+            $revModel->rating = $review->rating;
+            $revModel->review_id = $review->review_id;
+            $revModel->snippet = property_exists( $review,'snippet') ? $review->snippet: "";
+            $revModel->username = $review->user->name;
+            $revModel->userlink = $review->user->link;
+            $revModel->userreviews = property_exists($review->user, "reviews") ? $review->user->reviews: -1;
+            $revModel->userthumbnail = $review->user->thumbnail;
+            $revModel->save();
+        }
+
+    }
+    return redirect()->route("home");
+});
 
 Route::get('/chairs', function () {
     return Inertia::render('Chairs');

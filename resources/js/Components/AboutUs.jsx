@@ -1,6 +1,7 @@
 import React from "react";
 import {  Typography } from "@material-tailwind/react";
 import { Rating, Avatar } from "@mui/material";
+import { company } from "@/Constants/Info";
 
 export const AboutUs = ({props, reviews}) => {
     console.log(props);
@@ -25,7 +26,7 @@ export const AboutUs = ({props, reviews}) => {
                                 </a>
                             </div>
                             <div className="tw-flex tw-justify-start tw-items-center tw-text-md tw-text-gray-600">
-                                7809 122 St. Surrey, BC
+                                {company.ADDRESS}
                             </div>
                             <div className="tw-flex tw-items-center tw-gap-2 tw-font-bold tw-text-blue-gray-500">
                                 <label htmlFor="" className="tw-text-5xl tw-font-normal">{total.toFixed(1)}</label>

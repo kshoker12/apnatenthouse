@@ -1,17 +1,13 @@
-import { useState } from 'react';
-import ApplicationLogo from '@/Components/ApplicationLogo';
-import Dropdown from '@/Components/Dropdown';
 import NavLink from '@/Components/NavLink';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
-import { Link } from '@inertiajs/react';
 import AppLogo from "../Components/applogo.png"
 import Aos from 'aos';
 import 'aos/dist/aos.css'
 import { useEffect } from 'react';
 import Footer from './Footer';
+import { FACEBOOK, GOOGLE, INSTAGRAM } from '@/Constants/Links';
+import { ADDONS, CHAIRS, FAQ, FLOORS, GALLERY, HOME, TABLES, TENTS } from '@/Constants/Navigation';
 
 export default function NavBar({children }) {
-    const [showingNavigationDropdown, setShowingNavigationDropdown] = useState(false);
 
     useEffect(()=>{
         Aos.init({
@@ -42,13 +38,13 @@ export default function NavBar({children }) {
                     <img src={AppLogo} alt="" className='tw-h-64'/>
                   </a>{" "}
                   <div className="tw-flex tw-items-center tw-space-x-2 tw-text-5xl tw-mt-4">
-                    <a href="#">
+                    <a href={INSTAGRAM}>
                         <i className="fab fa-instagram"/>
                     </a>
-                    <a href="#">
+                    <a href={FACEBOOK}>
                         <i className="fab fa-facebook"/>
                     </a>
-                    <a href="#">
+                    <a href={GOOGLE}>
                         <i className="fab fa-google"/>
                     </a>
                   </div>
@@ -59,46 +55,13 @@ export default function NavBar({children }) {
                     id="bs-example-navbar-collapse-1"
                 >
                   <ul className="nav navbar-nav navbar-right">
-                    <li>
-                        <NavLink className = "navlink" href={route('home')} active={route().current('home')} >
-                            Home
-                        </NavLink> 
-                    </li>
-                    <li>
-                        <NavLink className = "navlink" href={route('tents')} active={route().current('tents')} >
-                            Tents
-                        </NavLink> 
-                    </li>
-                    <li>
-                        <NavLink className = "navlink" href={route('chairs')} active={route().current('chairs')} >
-                            Chairs
-                        </NavLink> 
-                    </li>
-                    <li>
-                        <NavLink className = "navlink" href={route('tables')} active={route().current('tables')} >
-                            Tables
-                        </NavLink> 
-                    </li>
-                    <li>
-                        <NavLink className = "navlink" href={route('floors')} active={route().current('floors')} >
-                            Floors
-                        </NavLink> 
-                    </li>
-                    <li>
-                        <NavLink className = "navlink" href={route('addons')} active={route().current('addons')} >
-                            Add-ons
-                        </NavLink> 
-                    </li>
-                    <li>
-                        <NavLink className = "navlink" href={route('faq')} active={route().current('faq')} >
-                            FAQs
-                        </NavLink> 
-                    </li>
-                    <li>
-                        <NavLink className = "navlink" href={route('gallery')} active={route().current('gallery')} >
-                            Gallery
-                        </NavLink> 
-                    </li>
+                    {[HOME, TENTS, CHAIRS, TABLES, FLOORS, ADDONS, FAQ, GALLERY].map((navItem)=>(
+                        <li>
+                            <NavLink className='navlink' href = {route(navItem.url)} active = {route().current(navItem.url)}>
+                                {navItem.name}
+                            </NavLink>    
+                        </li>
+                    ))}
                   </ul>
                 </div>
               </div>

@@ -7,7 +7,6 @@ import Features from '@/Components/Features';
 import { AboutUs } from '@/Components/AboutUs';
 
 export default function Home({reviews, status}) {
-    console.log(status)
     return (
             <NavBar>
                 <Head title="Home">

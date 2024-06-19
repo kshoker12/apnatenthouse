@@ -115,6 +115,47 @@
         {
             "img": "gallery24.JPG",
             "title": "g24"
+        },
+        {
+            "img": "gallery25.jpg",
+            "title": "g25"
+        }
+        ,
+        {
+            "img": "gallery26.jpg",
+            "title": "g26"
+        },
+        {
+            "img": "gallery27.jpg",
+            "title": "g27"
+        },
+        {
+            "img": "gallery28.jpg",
+            "title": "g28"
+        },
+        {
+            "img": "gallery29.jpg",
+            "title": "g29"
+        },
+        {
+            "img": "gallery30.jpg",
+            "title": "g30"
+        },
+        {
+            "img": "gallery31.jpg",
+            "title": "g31"
+        },
+        {
+            "img": "gallery32.jpg",
+            "title": "g32"
+        },
+        {
+            "img": "gallery33.jpg",
+            "title": "g33"
+        },
+        {
+            "img": "gallery34.jpg",
+            "title": "g34"
         }
     ],
     "faq": [
@@ -135,9 +176,8 @@
             {"image": "chair5.jpg", "name": "Fan Back Chair", "cost": 2.00, "text": "A fanback chair boasts a unique curved backrest design for ergonomic comfort, constructed from durable materials like resin or plastic, ideal for both indoor and outdoor events, blending style with practicality effortlessly."}
         ]},
         {"name": "Tables", "icon": "", "items":[
-            {"image": "table2.png", "name": "Round Table", "cost": 10.00, "text": "White round tables provide versatile and sleek surfaces for events, offering ample space and a modern aesthetic for dining, meetings, or displays at weddings, corporate functions, or social gatherings."},
-            
-            {"image": "table3.png", "name": "Rectangle Table", "cost": 8.00, "text": "Rectangle tables provide ample and versatile surfaces for various events, offering practicality and a classic aesthetic, ideal for dining, meetings, or displays at weddings, corporate functions, or social gatherings."},
+            {"image": "table2.png", "alt": "table2alt.jpg", "name": "Round Table", "cost": 10.00, "text": "White round tables provide versatile and sleek surfaces for events, offering ample space and a modern aesthetic for dining, meetings, or displays at weddings, corporate functions, or social gatherings."},
+            {"image": "table3.png", "alt": "table3alt.jpg", "name": "Rectangle Table", "cost": 8.00, "text": "Rectangle tables provide ample and versatile surfaces for various events, offering practicality and a classic aesthetic, ideal for dining, meetings, or displays at weddings, corporate functions, or social gatherings."},
             {"image": "table4.png", "name": "Buffet Table", "cost": 10.00, "text": "A buffet table is a long surface for serving food and drinks, designed with multiple levels or shelves for easy access, ideal for self-service dining at events like parties or receptions."},
             {"image": "table1.png", "name": "Cocktail Table", "cost": 10.00, "text": "A cocktail table is a tall, slender table for serving drinks and snacks at events, encouraging standing or casual mingling, ideal for cocktail parties and social gatherings."}
             
@@ -145,16 +185,26 @@
         {"name": "Floors", "icon": "", "items":[
             {"image": "floor1.jpg", "name": "Wooden Dance Floor", "cost": 2.00, "sizes": ["9ft x 9ft", "12ft x 12ft", "15ft x 15ft"], "text": "A wooden dance floor offers a stylish and sturdy surface for dancing at events, enhancing weddings, parties, and celebrations with its elegance and durability."},
             {"image": "floor2.jpg", "name": "Click-in Dance Floor", "cost": 2.00, "sizes":["8ft x 8ft", "12ft x 12ft", "16ft x 16ft", "Custom"], "text": "A click-in dance floor is a portable and easy-to-assemble flooring solution for events, with interlocking panels that require no tools or adhesives, providing a stable surface for dancing at weddings, parties, and gatherings."},
-            {"image": "floor3.jpg", "name": "Turf Flooring 12ft x 20ft", "cost": 56, "text": "A turf floor is synthetic grass flooring for outdoor events, offering a natural look and easy installation, perfect for weddings, festivals, and other outdoor occasions."}
+            {"image": "floor3.jpg", "name": "Turf Flooring 12ft x 20ft", "cost": 56, "text": "A turf floor is synthetic grass flooring for outdoor events, offering a natural look and easy installation, perfect for weddings, festivals, and other outdoor occasions."},
+            {"image": "floor4.jpg", "name": "Red Carpet 3ft x 20ft", "cost": 50.00, "text": ""},
+            {"image": "floor5.jpg", "name": "Foam Padding 6ft x 6ft", "cost": 10.00, "text": ""}
         ]},
         {"name": "Add-Ons", "icon": "", "items":[
-            {"image": "floor1.jpg", "name": "Stage 4ft x 4ft", "cost": 100.00, "text": "A click-in stage is a portable and tool-free assembly system with interlocking panels, providing a sturdy platform for performances and events indoors or outdoors."},
-            {"image": "bars.png", "name": "LED Bar", "cost": 250.00, "text": "An LED bar is a modern, illuminated serving counter for beverages at events, featuring customizable lighting effects for ambiance enhancement."}
+            {"image": "floor1.jpg", "name": "Stage 4ft x 8ft", "cost": 100.00, "text": "A click-in stage is a portable and tool-free assembly system with interlocking panels, providing a sturdy platform for performances and events indoors or outdoors."},
+            {"image": "bars.png", "name": "LED Bar", "cost": 250.00, "text": "An LED bar is a modern, illuminated serving counter for beverages at events, featuring customizable lighting effects for ambiance enhancement."},
+            {"image": "chandelier.jpg", "name": "Chandelier", "cost": 200.00, "text": ""},
+            {"image": "fans.jpg", "name": "Pedestal Fans", "cost": 100.00, "text": ""},
+            {"image": "sheets.jpg", "name": "White Sheets 8ft x 8ft", "cost": 12.00, "text": ""},
+            {"image": "heater.jpg", "name": "Heater", "cost": 50.00, "text": ""},
+            {"image": "handwash.jpg", "name": "Hand-Washing Station", "cost": 200.00, "text":""},
+            {"image": "speaker.jpg", "name": "Speaker", "cost": 50.00, "text": ""},
+            {"image": "stringlight.jpg", "name": "String Lights", "cost": 25.00, "text": ""},
+            {"image": "whitelight.jpg", "name": "Light White", "cost": 25.00, "text": ""}
         ]},
         {"name": "Tents", "icon": "", "items":[
             {"image": "tent1.jpg", "name": "Pop-up Tent", "cost": 100.00, "sizes":["10ft x 10ft", "10ft x 20ft"],"text": "A pop-up tent provides instant shelter with easy setup, ideal for outdoor events, featuring ventilation and waterproofing for convenience and comfort."},
             {"image": "marqueetent.jpg", "name": "Marquee Tent", "cost": 150.00, "sizes": ["10ft x 20ft", "20ft x 20ft", "40ft x 40ft", "Custom"], "text": "A marquee tent, renowned for its elegance and versatility, offers grand and spacious shelter, ensuring unforgettable experiences for weddings, extravagant parties, and prestigious corporate functions."},
-            {"image": "tent4.jpg", "name": "Frame Tent", "cost": 1.50, "text": "A frame tent, supported by a rigid framework and lacking center poles, offers versatile and unobstructed shelter for events like weddings and exhibitions, accommodating various layouts and configurations."}
+            {"image": "frametent.jpg","name": "Frame Tent", "cost": 1.50, "text": "A frame tent, supported by a rigid framework and lacking center poles, offers versatile and unobstructed shelter for events like weddings and exhibitions, accommodating various layouts and configurations."}
         ]}
     ]
 }
