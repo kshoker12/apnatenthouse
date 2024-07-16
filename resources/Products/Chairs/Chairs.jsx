@@ -37,8 +37,8 @@ class Chairs extends Component{
                 <Title name={this.NAME}/>
                 <DialogContent>
                     <div className="tw-h-fit tw-w-full">
-                        <div className="tw-flex tw-justify-center tw-items-center md:tw-h-[300px] tw-h-[250px] tw-w-full">
-                            <img src={this.IMAGE} className="tw-h-3/4 tw-w-auto"/>    
+                        <div className="tw-flex tw-justify-center tw-items-center tw-h-fit tw-w-full">
+                            <img src={this.IMAGE} className="tw-w-96 tw-h-auto"/>    
                         </div>    
                         <div className="tw-flex tw-items-center tw-justify-center">
                             <TextField 

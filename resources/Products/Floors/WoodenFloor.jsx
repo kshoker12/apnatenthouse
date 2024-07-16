@@ -43,7 +43,7 @@ class WoodenFloor extends Component {
                 <DialogContent>
                     <div className="tw-h-fit tw-w-full">
                         <div className="tw-flex tw-justify-center tw-items-center md:tw-h-[300px] tw-h-[250px] tw-w-full">
-                            <img src={this.IMAGE} className="tw-h-3/4 tw-w-auto"/>    
+                            <img src={this.IMAGE} style={{height: '75%', width: 'auto'}}/>    
                         </div>    
                         <div className="tw-flex tw-w-2/3 tw-justify-center">
                             <FormControl>

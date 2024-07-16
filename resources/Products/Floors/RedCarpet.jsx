@@ -36,14 +36,14 @@ class RedCarpet extends Component{
                 <DialogContent>
                     <div className="tw-h-fit tw-w-full">
                         <div className="tw-flex tw-justify-center tw-items-center md:tw-h-[300px] tw-h-[250px] tw-w-full">
-                            <img src={this.IMAGE} className="tw-h-3/4 tw-w-auto"/>    
+                            <img src={this.IMAGE} style={{height: '75%', width: 'auto'}}/>    
                         </div>    
-                        <div className="tw-flex tw-items-center tw-justify-center">
+                        <div className="tw-flex tw-items-center tw-justify-center tw-space-x-1">
                             <div className="tw-text-3xl tw-w-48">
                                 Quantity: {this.quantity}    
                             </div>
                             <div className="">
-                                <div className="tw-h-8">
+                                <div style={{height: 20}}>
                                     <button 
                                         className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
                                         onClick={()=>{

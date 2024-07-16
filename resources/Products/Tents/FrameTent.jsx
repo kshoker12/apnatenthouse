@@ -11,6 +11,7 @@ export default class FrameTent extends Component {
     TEXT = "A frame tent, supported by a rigid framework and lacking center poles, offers versatile and unobstructed shelter for events like weddings and exhibitions, accommodating various layouts and configurations.";
     LINER_IMAGE = "tentliner1.jpg";
     LINER_COST = 0.50;
+    LINER_DESCRIPTION = 'Elevate your outdoor event with stylish tent drapes in various colors, providing privacy and weather protection. Perfect for weddings, parties, and corporate events, ensuring a flawless setup and memorable atmosphere.'
 
     cost = 1.50;
     sizes = [

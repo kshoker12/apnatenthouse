@@ -10,30 +10,34 @@ const TentLinerActions = ({tent, handleClick, handleClose}) => {
             <DialogContent>
                 <div className="tw-h-fit tw-w-full">
                     <div className="tw-flex tw-justify-center tw-items-center md:tw-h-[300px] tw-h-[250px] tw-w-full">
-                        <img src={step === 0 ? tent.IMAGE : tent.LINER_IMAGE} className="tw-h-3/4 tw-w-[300px] tw-object-cover"/>    
+                        <img src={step === 0 ? tent.IMAGE : tent.LINER_IMAGE} style={{height: step ? 'auto' : '90%', width: step ? '90%' : 'auto'}}/>    
                     </div>    
-                    <div className="tw-flex tw-w-full tw-justify-center">
+                    <div className="">
                         {step === 1 ? (
-                            <FormGroup>
-                                <FormControlLabel
-                                    control={
-                                        <Checkbox
-                                            checked = {tent.liner}
-                                            onClick={()=>{
-                                                tent.liner = !tent.liner;
-                                                tent.forceUpdate();
-                                            }}
-                                            sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}
-                                        />    
-                                    }
-                                    label = "Include Tent Liner"
-                                    sx={{
-                                        '& .MuiFormControlLabel-label': {
-                                            fontSize: 20, // Change this value to the desired font size
+                            <>
+                                <FormGroup>
+                                    <FormControlLabel
+                                        control={
+                                            <Checkbox
+                                                checked = {tent.liner}
+                                                onClick={()=>{
+                                                    tent.liner = !tent.liner;
+                                                    tent.forceUpdate();
+                                                }}
+                                                sx={{ '& .MuiSvgIcon-root': { fontSize: 28 } }}
+                                            />    
                                         }
-                                    }}
-                                />
-                            </FormGroup>
+                                        label = "Include Tent Liner"
+                                        sx={{
+                                            '& .MuiFormControlLabel-label': {
+                                                fontSize: 20, // Change this value to the desired font size
+                                            }
+                                        }}
+                                    />
+                                </FormGroup>
+                                <p>{tent.LINER_DESCRIPTION}</p>
+                            </>
+                            
                         ) : (
                             <div>
                                 <FormControl sx={{ m: 1, width: 300 }}>

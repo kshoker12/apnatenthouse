@@ -278,7 +278,7 @@ export default function Booking({data}) {
         </TableContainer>
             <div className="tw-bg-white tw-py-5 tw-border-gray-300" style={{borderTopWidth:1}}>
                 <div className="tw-text-2xl tw-text-center tw-text-black">
-                    Selected Items {totalCost}
+                    Selected Items
                 </div>
             </div>
         </>

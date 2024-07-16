@@ -9,8 +9,8 @@ const MarqueeTentActions = ({tent, handleClick, handleClose}) => {
         <>
             {step === 0 ? (<DialogContent>
                 <div className="tw-h-fit tw-w-full">
-                    <div className="tw-flex tw-justify-center tw-items-center md:tw-h-[300px] tw-h-[250px] tw-w-full">
-                        <img src={tent.IMAGE} className="tw-h-3/4 tw-w-auto"/>    
+                    <div className="tw-flex tw-justify-center tw-items-center tw-w-full">
+                        <img src={tent.IMAGE} style={{height: '250px', width: '100%'}}/>    
                     </div>    
                     <div className="tw-flex tw-w-2/3 tw-justify-center">
                         <FormControl>
@@ -42,7 +42,7 @@ const MarqueeTentActions = ({tent, handleClick, handleClose}) => {
                                     Length: {tent.length}ft
                                 </div>
                                 <div className="">
-                                    <div className="tw-h-8">
+                                    <div style={{height: 20}}>
                                         <button 
                                             className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
                                             onClick={()=>{
@@ -90,7 +90,7 @@ const MarqueeTentActions = ({tent, handleClick, handleClose}) => {
                                     Width: {tent.width} ft   
                                 </div>
                                 <div className="">
-                                    <div className="tw-h-8">
+                                    <div style={{height: 20}}>
                                         <button 
                                             className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
                                             onClick={()=>{
@@ -146,9 +146,9 @@ const MarqueeTentActions = ({tent, handleClick, handleClose}) => {
                 <DialogContent>
                     <div className="tw-h-fit tw-w-full">
                         <div className="tw-flex tw-justify-center tw-items-center md:tw-h-[300px] tw-h-[250px] tw-w-full">
-                            <img src={tent.LINER_IMAGE} className="tw-h-3/4 tw-w-auto tw-object-cover"/>    
+                            <img src={tent.LINER_IMAGE} style={{height: '250px', width: '100%'}}/>    
                         </div>    
-                        <div className="tw-flex tw-w-full tw-justify-center">
+                        <div className="">
                             <FormGroup>
                                 <FormControlLabel
                                     control={
@@ -169,6 +169,7 @@ const MarqueeTentActions = ({tent, handleClick, handleClose}) => {
                                     }}
                                 />
                             </FormGroup>
+                            <p>{tent.LINER_DESCRIPTION}</p>
                         </div>
                     </div>
                 </DialogContent>

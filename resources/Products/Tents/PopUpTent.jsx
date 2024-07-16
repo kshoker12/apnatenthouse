@@ -49,7 +49,7 @@ export default class PopUpTent extends Component {
                 <DialogContent>
                     <div className="tw-h-fit tw-w-full">
                         <div className="tw-flex tw-justify-center tw-items-center md:tw-h-[300px] tw-h-[250px] tw-w-full">
-                            <img src={this.IMAGE} className="tw-h-3/4 tw-w-auto"/>    
+                            <img src={this.IMAGE} style={{height: '75%', width: 'auto'}}/>    
                         </div>    
                         <div className="tw-flex tw-w-2/3 tw-justify-center">
                             <FormControl>
@@ -72,12 +72,12 @@ export default class PopUpTent extends Component {
                                 </RadioGroup>
                             </FormControl>   
                         </div>
-                        <div className="tw-flex tw-items-center tw-justify-center">
+                        <div className="tw-flex tw-items-center tw-justify-center tw-space-x-1">
                             <div className="tw-text-3xl tw-w-48">
                                 Quantity: {this.quantity}    
                             </div>
-                            <div className="">
-                                <div className="tw-h-8">
+                            <div>
+                                <div className="" style={{height: '20px'}}>
                                     <button 
                                         className="hover:tw-opacity-70 tw-ease-in-out tw-duration-200"
                                         onClick={()=>{

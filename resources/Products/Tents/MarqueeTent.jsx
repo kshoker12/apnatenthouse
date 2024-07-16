@@ -16,6 +16,7 @@ export default class MarqueeTent extends Component {
     MIN_QUANTITY = 1;
     LINER_IMAGE = "tentliner2.jpg";
     LINER_COST = 2.00
+    LINER_DESCRIPTION = 'Elevate your outdoor event with stylish tent drapes in various colors, providing privacy and weather protection. Perfect for weddings, parties, and corporate events, ensuring a flawless setup and memorable atmosphere.'
 
     constructor(props) {
         super(props);

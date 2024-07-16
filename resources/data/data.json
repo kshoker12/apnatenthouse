@@ -186,20 +186,20 @@
             {"image": "floor1.jpg", "name": "Wooden Dance Floor", "cost": 2.00, "sizes": ["9ft x 9ft", "12ft x 12ft", "15ft x 15ft"], "text": "A wooden dance floor offers a stylish and sturdy surface for dancing at events, enhancing weddings, parties, and celebrations with its elegance and durability."},
             {"image": "floor2.jpg", "name": "Click-in Dance Floor", "cost": 2.00, "sizes":["8ft x 8ft", "12ft x 12ft", "16ft x 16ft", "Custom"], "text": "A click-in dance floor is a portable and easy-to-assemble flooring solution for events, with interlocking panels that require no tools or adhesives, providing a stable surface for dancing at weddings, parties, and gatherings."},
             {"image": "floor3.jpg", "name": "Turf Flooring 12ft x 20ft", "cost": 56, "text": "A turf floor is synthetic grass flooring for outdoor events, offering a natural look and easy installation, perfect for weddings, festivals, and other outdoor occasions."},
-            {"image": "floor4.jpg", "name": "Red Carpet 3ft x 20ft", "cost": 50.00, "text": ""},
-            {"image": "floor5.jpg", "name": "Foam Padding 6ft x 6ft", "cost": 10.00, "text": ""}
+            {"image": "floor4.jpg", "name": "Red Carpet 3ft x 20ft", "cost": 50.00, "text": "Elevate your event with our premium Red Carpet, perfect for creating an elegant and glamorous entrance, our high-quality red carpet."},
+            {"image": "floor5.jpg", "name": "Foam Padding 6ft x 6ft", "cost": 10.00, "text": "Create comfort and convenience at your outdoor wedding or prayer event with our foam pad rental. Designed for outdoor use, it offers cushioning and insulation from the ground, ensuring a pleasant experience for guests."}
         ]},
         {"name": "Add-Ons", "icon": "", "items":[
             {"image": "floor1.jpg", "name": "Stage 4ft x 8ft", "cost": 100.00, "text": "A click-in stage is a portable and tool-free assembly system with interlocking panels, providing a sturdy platform for performances and events indoors or outdoors."},
             {"image": "bars.png", "name": "LED Bar", "cost": 250.00, "text": "An LED bar is a modern, illuminated serving counter for beverages at events, featuring customizable lighting effects for ambiance enhancement."},
-            {"image": "chandelier.jpg", "name": "Chandelier", "cost": 200.00, "text": ""},
-            {"image": "fans.jpg", "name": "Pedestal Fans", "cost": 100.00, "text": ""},
-            {"image": "sheets.jpg", "name": "White Sheets 8ft x 8ft", "cost": 12.00, "text": ""},
-            {"image": "heater.jpg", "name": "Heater", "cost": 50.00, "text": ""},
-            {"image": "handwash.jpg", "name": "Hand-Washing Station", "cost": 200.00, "text":""},
-            {"image": "speaker.jpg", "name": "Speaker", "cost": 50.00, "text": ""},
-            {"image": "stringlight.jpg", "name": "String Lights", "cost": 25.00, "text": ""},
-            {"image": "whitelight.jpg", "name": "Light White", "cost": 25.00, "text": ""}
+            {"image": "chandelier.jpg", "name": "Chandelier", "cost": 200.00, "text": "Elevate weddings, galas, and special events with our exquisite crystal chandelier. Effortless setup and professional service guarantee a brilliantly illuminated venue."},
+            {"image": "fans.jpg", "name": "Pedestal Fans", "cost": 100.00, "text": "Stay cool with our pedestal fan rental. Featuring adjustable height and powerful airflow, perfect for events and spaces needing effective ventilation."},
+            {"image": "sheets.jpg", "name": "White Sheets 8ft x 8ft", "cost": 12.00, "text": "Elevate your event with our crisp white sheet rentals. Perfect for weddings, parties, and corporate functions, providing a clean and elegant backdrop or versatile décor option."},
+            {"image": "heater.jpg", "name": "Heater", "cost": 50.00, "text": "Keep your outdoor event warm and inviting with our patio heater rental. Featuring powerful heat output and sleek design, perfect for gatherings in cooler weather."},
+            {"image": "handwash.jpg", "name": "Hand-Washing Station", "cost": 200.00, "text":"Ensure hygiene at your event with our portable hand washing station rental. Equipped with soap dispensers and paper towel holders, it provides convenience and cleanliness for guests."},
+            {"image": "speaker.jpg", "name": "Speaker", "cost": 50.00, "text": "Enhance your event's sound quality with our speaker and microphone rental. Perfect for weddings, conferences, and parties, ensuring clear audio delivery and seamless amplification."},
+            {"image": "stringlight.jpg", "name": "String Lights", "cost": 25.00, "text": "Illuminate your event with our enchanting string lights rental. Perfect for weddings, parties, and outdoor gatherings, they create a warm and inviting atmosphere."},
+            {"image": "whitelight.jpg", "name": "Light White", "cost": 25.00, "text": "Elevate your event with our elegant white corner lights, perfect for weddings, parties, and special occasions."}
         ]},
         {"name": "Tents", "icon": "", "items":[
             {"image": "tent1.jpg", "name": "Pop-up Tent", "cost": 100.00, "sizes":["10ft x 10ft", "10ft x 20ft"],"text": "A pop-up tent provides instant shelter with easy setup, ideal for outdoor events, featuring ventilation and waterproofing for convenience and comfort."},
