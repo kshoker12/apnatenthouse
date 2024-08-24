@@ -24,8 +24,10 @@ export default function BookingForm({routeData}) {
         protection: false,
         setup: false
     });
+    console.log(routeData);
 
-    const [totalCost, setTotalCost] = useState(routeData ? routeData.totalCost: 0);
+    const [totalCost, setTotalCost] = useState(routeData ? parseFloat(routeData.totalCost): 0);
+    console.log(totalCost);
     const [itemsList, setItems] = useState(routeData ? routeData.items : [])
 
     const submit = (e) => {
@@ -353,8 +355,9 @@ export default function BookingForm({routeData}) {
                                     )
                                 })}    
                             </ul>
-                            <div className="tw-px-6 tw-py-4">
+                            <div className="tw-px-6 tw-pt-4 tw-pb-2">
                                 <h4 className=""><strong>Estimated Cost:</strong> ${totalCost.toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2, maximumFractionDigits:2})}</h4>
+                                <p className="tw-text-[12px]">Payment must be made before setup and there will be a 10% daily charge for late payments</p>
                             </div>
                         </div>
                         

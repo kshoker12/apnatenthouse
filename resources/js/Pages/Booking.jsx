@@ -43,7 +43,7 @@ export default function Booking({data}) {
     const [active, setActive] = useState(0)
     const products = [JsonData.products[4],JsonData.products[0], JsonData.products[1], JsonData.products[2], JsonData.products[3]]
     const [openIndex, setOpenIndex] = useState(-1);
-    const [totalCost, setTotalCost] = useState(data ? data.totalCost : 0)
+    const [totalCost, setTotalCost] = useState(data ? parseFloat(data.totalCost) : 0)
     const [itemList, setItemList] = useState(data ? data.items : [])
 
     function findImage(category) {

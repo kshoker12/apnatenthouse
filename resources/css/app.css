@@ -677,13 +677,13 @@ label {
 @media screen and (min-width: 960px) {
   .summary {
     overflow-y: scroll;
-    height: 410px;
+    height: 370px;
   }
 }
 
 @media screen and (max-width: 959px) {
   .summary {
-    height: 872px;
+    height: 820px;
     overflow-y: auto;
   }
 
